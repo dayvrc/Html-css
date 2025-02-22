@@ -1,7 +1,21 @@
 body {
     background: rgb(212, 212, 212);
+    padding: 20px;
 }
 
-h1 {
-    color: rgb(148, 35, 35)
+.topo {
+    text-align: center;
+    color: white;
+    background: rgb(143, 14, 14);
+
+}
+
+#menu {
+    text-align: center;
+    background-color: white;
+    color: red;
+}
+
+.center {
+    text-align: center;
 }
