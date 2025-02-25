@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     background-image: url("../CSS/img/background.jpg");
     background-size: contain;
@@ -7,25 +9,41 @@ body {
 /* USAR PONTO NO INICIO QUANDO FOR CLASSE*/
 .topo {
     text-align: center;
-    color: rgb(0, 0, 0);
+    <<<<<<< HEAD color: rgb(0, 0, 0);
     background: rgb(255, 255, 255);
     border-top: 20px solid rgb(4, 12, 56);
     border-radius: 10px;
     border-bottom: 20px solid rgb(4, 12, 56);
 
+    =======color: white;
+    background: rgb(15, 5, 90);
+    border-top: 20px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    font-family: "montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 670px;
+    min-width: 650px;
+    >>>>>>>cd8db6926767ac7e4ced2cc4a024dbc588fc8136
 }
 
 /* USAR JOGO DA VELHA NO INICIO QUANDO FOR ID*/
 #menu {
     text-align: center;
     background-color: white;
-    color: red;
     /*Topo x Direita x Base x Esquerda*/
     padding: 20px 10px 20px 10px;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    text-decoration: none;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 650px;
+    min-width: 650px;
+
 }
 
 #meio {
@@ -34,11 +52,40 @@ body {
     background-color: white;
     border-right: 10px;
     text-align: center;
+    <<<<<<< HEAD border-radius: 10px;
+    =======padding: 20px 10px 20px 10px;
     border-radius: 10px;
+    /*Tamanho maximo de expansão na tela*/
+    max-width: 650px;
+    min-width: 650px;
+    /*Podemos importar fontes do https://fonts.google.com/ - Importa depois usa*/
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    >>>>>>>cd8db6926767ac7e4ced2cc4a024dbc588fc8136
 }
 
-/* USEI O P PARA INDICAR QUE A MODIFICAÇÃO É EM PARAGRAFO*/
+/* USEI O "P" PARA INDICAR QUE A MODIFICAÇÃO É EM PARAGRAFO*/
 p {
+    /*ESPACO NAS LATERIAS DO TEXTO*/
     margin-right: 20px;
     margin-left: 20px;
+    /*ESPAÇO NO INICIO DO TEXTO*/
+    text-indent: 20px;
+    /*ALINHAMENTO DE TEXTO*/
+    text-align: justify;
+    /*ESPACO ENTRE LETRAS*/
+    letter-spacing: 1px;
+    /*ESPACO ENTRE LINHAS*/
+    line-height: 1.1;
+    /*ESPACO ENTRE PALAVRAS*/
+    word-spacing: 10px;
+}
+
+/* USEI O "A" PARA INDICAR QUE A MODIFICAÇÃO É EM PARAGRAFO*/
+a {
+    /*CANCELAR DECORAÇÃO DE TEXTO - SUBLINHADO DE LINK*/
+    text-decoration: none;
 }
