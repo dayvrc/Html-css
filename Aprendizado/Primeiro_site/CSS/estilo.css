@@ -1,21 +1,41 @@
 body {
-    background: rgb(212, 212, 212);
+    background-image: url("../CSS/img/background.jpg");
+    background-size: contain;
     padding: 20px;
 }
 
+/* USAR PONTO NO INICIO QUANDO FOR CLASSE*/
 .topo {
     text-align: center;
     color: white;
     background: rgb(143, 14, 14);
+    border-top: 20px solid rgb(29, 74, 8);
+    border-radius: 10px;
 
 }
 
+/* USAR JOGO DA VELHA NO INICIO QUANDO FOR ID*/
 #menu {
     text-align: center;
     background-color: white;
     color: red;
+    /*Topo x Direita x Base x Esquerda*/
+    padding: 20px 10px 20px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-decoration: none;
 }
 
-.center {
+#meio {
     text-align: center;
+    background-color: white;
+    border-right: 10px;
+    text-align: center;
+}
+
+/* USEI O P PARA INDICAR QUE A MODIFICAÇÃO É EM PARAGRAFO*/
+p {
+    margin-right: 20px;
+    margin-left: 20px;
 }
