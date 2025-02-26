@@ -3,21 +3,29 @@
 body {}
 
 /* USAR PONTO NO INICIO QUANDO FOR CLASSE*/
-.topo {
+.banner1 {
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(8, 10, 61);
     background: rgb(0, 0, 0);
-    color: white;
-    background: rgb(15, 5, 90);
+    /*background: rgb(15, 5, 90);*/
+    background-image: url(img/fundo.jpg);
+    background-size: cover;
+    height: 300px;
     font-family: "montserrat", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
+.container_menu {
+    display: flex;
+    gap: 500px;
+}
+
 /* USAR JOGO DA VELHA NO INICIO QUANDO FOR ID*/
 #menu {
-    text-align: center;
+    text-align: right;
+    padding-right: 20px;
     color: black;
     /*Topo x Direita x Base x Esquerda*/
     /* padding: 20px 10px 20px 10px;*/
@@ -30,12 +38,15 @@ body {}
     font-style: normal;
 }
 
-#meio {
+#logo {
+    text-align: left;
+}
+
+#bloco_passagem1 {
 
     text-align: center;
     background-color: rgb(199, 242, 186);
     border-right: 10px;
-    text-align: center;
     border-radius: 10px;
     padding: 20px 10px 20px 10px;
     border-radius: 10px;
@@ -47,6 +58,27 @@ body {}
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    padding: 10px;
+
+}
+
+#bloco_passagem2 {
+
+    text-align: center;
+    background-color: rgb(240, 242, 186);
+    border-right: 10px;
+    border-radius: 10px;
+    padding: 20px 10px 20px 10px;
+    border-radius: 10px;
+    /*Tamanho maximo de expansão na tela*/
+    max-width: 250px;
+    min-width: 250px;
+    /*Podemos importar fontes do https://fonts.google.com/ - Importa depois usa*/
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 10px;
 
 }
 
@@ -71,4 +103,21 @@ p {
 a {
     /*CANCELAR DECORAÇÃO DE TEXTO - SUBLINHADO DE LINK*/
     text-decoration: none;
+}
+
+/*CLASSE CRIADA PARA AGRUPAR AS DIVS DE PASSAGEM*/
+.container_passagens {
+    /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
+    display: flex;
+    /*ESPAÇAMENTO DAS LATERAIS DA DIV*/
+    padding: 10px;
+    /*COMANDO DE DAR ESPAÇAMENTO ENTRE AS DIVS*/
+    gap: 10px;
+
+}
+
+.rodape {
+    text-align: justify;
+    color: gray;
+
 }
