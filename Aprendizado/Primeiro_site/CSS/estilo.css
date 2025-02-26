@@ -1,37 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
-    background-image: url("../CSS/img/background.jpg");
-    background-size: contain;
-    padding: 20px;
-}
+body {}
 
 /* USAR PONTO NO INICIO QUANDO FOR CLASSE*/
 .topo {
     text-align: center;
     color: rgb(255, 255, 255);
     background: rgb(0, 0, 0);
-    border-top: 20px solid rgb(4, 12, 56);
-    border-radius: 10px;
-    border-bottom: 20px solid rgb(255, 255, 255);
     color: white;
     background: rgb(15, 5, 90);
-    border-top: 20px solid rgb(255, 255, 255);
-    border-radius: 10px;
     font-family: "montserrat", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    max-width: 670px;
-    min-width: 650px;
 }
 
 /* USAR JOGO DA VELHA NO INICIO QUANDO FOR ID*/
 #menu {
     text-align: center;
-    background-color: white;
+    color: black;
     /*Topo x Direita x Base x Esquerda*/
-    padding: 20px 10px 20px 10px;
+    /* padding: 20px 10px 20px 10px;*/
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -39,23 +28,20 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    max-width: 650px;
-    min-width: 650px;
-
 }
 
 #meio {
 
     text-align: center;
-    background-color: white;
+    background-color: rgb(199, 242, 186);
     border-right: 10px;
     text-align: center;
     border-radius: 10px;
     padding: 20px 10px 20px 10px;
     border-radius: 10px;
     /*Tamanho maximo de expansão na tela*/
-    max-width: 650px;
-    min-width: 650px;
+    max-width: 250px;
+    min-width: 250px;
     /*Podemos importar fontes do https://fonts.google.com/ - Importa depois usa*/
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
