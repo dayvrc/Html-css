@@ -18,8 +18,10 @@ body {}
 }
 
 .container_menu {
+    /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
     display: flex;
-    gap: 500px;
+    /*COMANDO PARA DEIXAR O ESPAÇO ENTRE AS DUAS DIVS FLEX*/
+    justify-content: space-between;
 }
 
 /* USAR JOGO DA VELHA NO INICIO QUANDO FOR ID*/
@@ -40,6 +42,7 @@ body {}
 
 #logo {
     text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #bloco_passagem1 {
@@ -88,7 +91,7 @@ p {
     margin-right: 20px;
     margin-left: 20px;
     /*ESPAÇO NO INICIO DO TEXTO*/
-    text-indent: 20px;
+    text-indent: 0px;
     /*ALINHAMENTO DE TEXTO*/
     text-align: justify;
     /*ESPACO ENTRE LETRAS*/
@@ -117,7 +120,7 @@ a {
 }
 
 .rodape {
-    text-align: justify;
+    text-align: center;
     color: gray;
 
 }
