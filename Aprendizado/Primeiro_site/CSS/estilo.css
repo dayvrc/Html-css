@@ -54,7 +54,7 @@ body {}
     padding: 20px 10px 20px 10px;
     border-radius: 10px;
     /*Tamanho maximo de expansão na tela*/
-    max-width: 250px;
+    max-width: 800px;
     min-width: 250px;
     /*Podemos importar fontes do https://fonts.google.com/ - Importa depois usa*/
     font-family: "Montserrat", serif;
