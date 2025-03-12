@@ -18,10 +18,15 @@ body {}
 }
 
 .container_menu {
-    /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
-    display: flex;
+
     /*COMANDO PARA DEIXAR O ESPAÇO ENTRE AS DUAS DIVS FLEX*/
     justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
+    display: flex;
+
+
 }
 
 /* USAR JOGO DA VELHA NO INICIO QUANDO FOR ID*/
@@ -38,11 +43,24 @@ body {}
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    display: block;
 }
 
 #logo {
     text-align: left;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+/*CLASSE CRIADA PARA AGRUPAR AS DIVS DE PASSAGEM*/
+.container_passagens {
+    /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
+    display: inline-block;
+    /*ESPAÇAMENTO DAS LATERAIS DA DIV*/
+    padding: 10px;
+    /*COMANDO DE DAR ESPAÇAMENTO ENTRE AS DIVS*/
+    gap: 10px;
+
 }
 
 #bloco_passagem1 {
@@ -62,6 +80,7 @@ body {}
     font-weight: 400;
     font-style: normal;
     padding: 10px;
+    display: inline-block;
 
 }
 
@@ -82,6 +101,7 @@ body {}
     font-weight: 400;
     font-style: normal;
     padding: 10px;
+    display: inline-block;
 
 }
 
@@ -108,19 +128,18 @@ a {
     text-decoration: none;
 }
 
-/*CLASSE CRIADA PARA AGRUPAR AS DIVS DE PASSAGEM*/
-.container_passagens {
-    /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
-    display: flex;
-    /*ESPAÇAMENTO DAS LATERAIS DA DIV*/
-    padding: 10px;
-    /*COMANDO DE DAR ESPAÇAMENTO ENTRE AS DIVS*/
-    gap: 10px;
-
-}
-
 .rodape {
     text-align: center;
     color: gray;
 
+}
+
+.container_quem {
+    border: 1px solid black;
+
+}
+
+.container_img {
+    float: left;
+    margin-right: 20px;
 }
