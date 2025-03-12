@@ -6,7 +6,7 @@ body {}
 .banner1 {
     text-align: center;
     color: rgb(8, 10, 61);
-    background: rgb(0, 0, 0);
+    /*background: rgb(0, 0, 0);*;/
     /*background: rgb(15, 5, 90);*/
     background-image: url(img/fundo.jpg);
     background-size: cover;
@@ -15,18 +15,21 @@ body {}
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+
+}
+
+.teste {
+    height: 20px;
 }
 
 .container_menu {
-
-    /*COMANDO PARA DEIXAR O ESPAÇO ENTRE AS DUAS DIVS FLEX*/
-    justify-content: space-between;
-    position: fixed;
-    background-color: white;
     /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
     display: flex;
-
-
+    /*COMANDO PARA DEIXAR O ESPAÇO ENTRE AS DUAS DIVS FLEX*/
+    justify-content: space-between;
+    align-content: center;
+    position: fixed;
+    background-color: white;
 }
 
 /* USAR JOGO DA VELHA NO INICIO QUANDO FOR ID*/
@@ -43,13 +46,14 @@ body {}
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    display: block;
+    display: flex;
+
 }
 
 #logo {
-    text-align: left;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+    margin: 0;
+    /* Remove margens padrão */
 }
 
 /*CLASSE CRIADA PARA AGRUPAR AS DIVS DE PASSAGEM*/
