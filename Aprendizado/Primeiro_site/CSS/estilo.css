@@ -24,6 +24,7 @@
     align-content: center;
     position: fixed;
     background-color: white;
+
 }
 
 #menu {
@@ -137,4 +138,12 @@ a {
 .container_img {
     float: left;
     margin-right: 20px;
+}
+
+ul {
+    background: black;
+}
+
+li {
+    display: inline-block;
 }
