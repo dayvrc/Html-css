@@ -4,41 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>A.E.R.O - Login</title>
     <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
 </head>
 
 <body>
-    <h1 class="topo">Login de usuário</h1>
-    <hr>
-    <a href="index.html">Voltar para Home</a>
-    <hr>
-    <br>
-    <form>
-        <p>Cliente ou representante?</p>
+    <div id="container_menu">
 
-        <!--CAIXA DE SELEÇÃO - NAME TEM QUE SER IGUAL-->
-        <input type="radio" id="Cliente" name="Cliente" value="Cliente">
-        <label for="Cliente">Cliente</label>
+        <div class="logo">
+            <a style="color: rgb(8, 10, 61);" href="index.html">
+                <h1>A.E.R.O</h1>
+            </a>
+        </div>
 
-        <input type="radio" id="Representante" name="Cliente" value="Representante">
-        <label for="Representante">Representante</label><br><br>
+        <header class="menu">
+            <a href="agendar_visita.html">Comprar passagens</a>
+            &nbsp;&nbsp;&nbsp; <!--TAG DE ESPAMENTO-->
+            <a href="login.html">Login</a>
+            &nbsp;&nbsp;&nbsp; <!--TAG DE ESPAMENTO-->
+            <a href="quem_somos.html">Quem somos</a>
+        </header>
 
-
-        <!--LEGENDA PARA EMAIL-->
-        <label for="campo_email">E-mail*</label>
-        <!--ENTRADA DE DADOS TIPO EMAIL-->
-        <input id="campo_email" type="email" placeholder="Digite seu e-mail" required>
         <br><br>
-        <label for="campo_senha">Senha</label>
-        <input id="campo_senha" type="password" placeholder="Digite sua senha" required>
-        <br><br>
+    </div>
 
-        <input type="checkbox" id="confirmar" name="Confirmar o agendamento" value="Confirmar o agendamento">
-        <label for="confirmar">Confirmar o agendamento</label><br><br>
+    <form id="container_login">
 
-        <!--BOTÃO-->
-        <input type="submit" value="Agendar">
+        <div class="iniciar_sessao">
+            <h1>Iniciar sessão</h1>
+
+            <!--CAIXA DE SELEÇÃO - NAME TEM QUE SER IGUAL-->
+            <!--<input type="radio" id="Cliente" name="Cliente" value="Cliente">
+            <label for="Cliente">Cliente</label>
+
+            <input type="radio" id="Representante" name="Cliente" value="Representante">
+            <label for="Representante">Representante</label><br><br>-->
+
+            <!--LEGENDA PARA EMAIL-->
+            <label for="campo_email">E-mail</label>
+            <!--ENTRADA DE DADOS TIPO EMAIL-->
+            <input id="campo_email" type="email" placeholder="Digite seu e-mail" required>
+            <br><br>
+            <label for="campo_senha">Senha</label>
+            <input id="campo_senha" type="password" placeholder="Digite sua senha" required>
+            <br><br>
+        </div>
+
+        <div>
+            <!--BOTÃO-->
+            <input type="submit" value="Entrar" class="botao_entrada">
+        </div>
+        <!--<input type="checkbox" id="confirmar" name="Confirmar o agendamento" value="Confirmar o agendamento">
+        <label for="confirmar">Confirmar o agendamento</label><br><br>-->
 
     </form>
 </body>

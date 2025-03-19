@@ -17,18 +17,14 @@
 
 }
 
-.container_menu {
+#container_menu {
     /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
     display: flex;
     /*COMANDO PARA DEIXAR O ESPAÇO ENTRE AS DUAS DIVS FLEX*/
     justify-content: space-between;
-    align-content: center;
-    position: fixed;
-    background-color: white;
-
 }
 
-#menu {
+.menu {
     text-align: right;
     padding-right: 20px;
     color: black;
@@ -36,34 +32,25 @@
     /* padding: 20px 10px 20px 10px;*/
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 10px;
     font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    display: flex;
-
+    font-weight: 350;
 }
 
-#logo {
+.logo {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* Remove margens padrão */
-    margin: 0;
-
-
 }
 
-.container_passagens {
+#container_passagens {
     /*COMANDO DE DEIXAR AS DIVS FLEXIVEIS*/
-    display: inline-block;
+    display: flex;
     /*ESPAÇAMENTO DAS LATERAIS DA DIV*/
     padding: 10px;
     /*COMANDO DE DAR ESPAÇAMENTO ENTRE AS DIVS*/
-    gap: 10px;
-
+    gap: 20px;
+    margin: 0 auto;
 }
 
-#bloco_passagem1 {
+.bloco_passagem1 {
 
     text-align: center;
     background-color: rgb(199, 242, 186);
@@ -80,11 +67,10 @@
     font-weight: 400;
     font-style: normal;
     padding: 10px;
-    display: inline-block;
 
 }
 
-#bloco_passagem2 {
+.bloco_passagem2 {
     text-align: center;
     background-color: rgb(240, 242, 186);
     border-right: 10px;
@@ -100,9 +86,30 @@
     font-weight: 400;
     font-style: normal;
     padding: 10px;
-    display: inline-block;
-
 }
+
+.bloco2_passagem1 {
+
+    text-align: center;
+    background-color: rgb(199, 242, 186);
+    border-right: 10px;
+    padding: 20px 10px 20px 10px;
+    /*Tamanho maximo de expansão na tela*/
+    max-width: 800px;
+    min-width: 800px;
+    height: 350px;
+    /*Podemos importar fontes do https://fonts.google.com/ - Importa depois usa*/
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 10px;
+    display: flex;
+    gap: 40px;
+    margin: 0 auto;
+}
+
+
 
 /* USEI O "P" PARA INDICAR QUE A MODIFICAÇÃO É EM PARAGRAFO*/
 p {
@@ -129,8 +136,8 @@ a {
 
 .rodape {
     text-align: center;
-    color: gray;
-
+    font-family: arial;
+    color: black
 }
 
 .container_quem {
@@ -142,10 +149,25 @@ a {
     margin-right: 20px;
 }
 
-ul {
-    background: black;
+#container_login {
+    margin: 0 auto;
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(234, 234, 236);
 }
 
-li {
-    display: inline-block;
+.botao_entrada {
+    background-color: rgb(46, 159, 46);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    /* padding - Topo x Direita x Base x Esquerda*/
+    padding: 10px 20px 10px 20px;
+}
+
+.iniciar_sessao {
+    border: none;
+}
+
+.texto_bloco2 {
+    width: 200px;
 }
