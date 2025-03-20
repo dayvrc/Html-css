@@ -13,7 +13,7 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    text-shadow: 2px, 2px, 2px, white;
+    text-shadow: 2px 2px 4px white;
 
 }
 
@@ -67,6 +67,7 @@
     font-weight: 400;
     font-style: normal;
     padding: 10px;
+    box-shadow: 2px 2px 4px rgb(141, 141, 141);
 
 }
 
@@ -86,6 +87,7 @@
     font-weight: 400;
     font-style: normal;
     padding: 10px;
+    box-shadow: 2px 2px 4px rgb(141, 141, 141);
 }
 
 .bloco2_passagem1 {
@@ -162,6 +164,7 @@ a {
     border-radius: 10px;
     /* padding - Topo x Direita x Base x Esquerda*/
     padding: 10px 20px 10px 20px;
+    box-shadow: 2px 2px 4px rgb(141, 141, 141);
 }
 
 .iniciar_sessao {
