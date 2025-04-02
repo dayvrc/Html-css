@@ -154,9 +154,9 @@ section h2 {
 
 footer {
     margin-top: 100px;
-    background: gainsboro;
+    background: rgb(237, 237, 237);
     text-align: center;
-    border-top: 5px solid rgb(46, 159, 46);
+    border-top: 2px solid rgb(46, 159, 46);
     width: 100%;
 }
 
@@ -185,7 +185,7 @@ footer {
 .aero_tour {
     font-family: 'Lobster', cursive;
     color: #180F4A;
-    font-size: 34px;
+    font-size: 40px;
 }
 
 
@@ -240,9 +240,9 @@ footer {
     height: 40px;
     border-radius: 10px;
     /* padding - Topo x Direita x Base x Esquerda*/
-    padding: 10px 20px 10px 20px;
-    margin-top: 15%;
+    /* padding: 10px 20px 10px 20px; */
     box-shadow: 2px 2px 4px rgb(141, 141, 141);
+    margin: 10px;
 }
 
 .container_login_btn {}

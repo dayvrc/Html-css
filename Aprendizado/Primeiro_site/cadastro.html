@@ -1,0 +1,149 @@
+<!DOCTYPE html> <!--Tag que mostra que o documento e tipo html-->
+<html lang="pt-br"> <!--Tag que inicia o html e lang define idioma-->
+
+<head>
+    <meta charset="UTF-8"> <!--Tag de tipo de caracter com acento-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Tag de combatibilidade de explorer-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Tag de compatibilidade de expansão de tela-->
+    <meta name="description" content="Esse é meu primeiro site">
+    <meta name="keywords" content="programacao,html,css,javascript">
+    <meta name="author" content="Dayvson Costa">
+    <title>Aero Tour | Viaje bem</title> <!--Tag de titulo-->
+    <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
+    <script type="text/javascript" src="JS/global.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar"> <!--criando o menu de navegação "navbar"-->
+
+        <div class="logo">
+            <a href="index.html"> <!--A tag <a> significa angora=hyperlink-->
+                <h1>Aero Tour</h1>
+            </a>
+        </div>
+
+        <div class="menu">
+            <a href="#">Comprar passagens</a>
+            <a href="#">Quem somos</a>
+            <a id="botao" href="login.html">Login</a> <!--Criar o botão de login-->
+        </div>
+
+    </nav>
+
+    <section>
+
+        <div class="cadastro">
+            <br>
+            <h2> Cadastro </h2>
+            <br>
+
+            <table width="100%" cellspacing="10" class="cor-texto">
+
+                <form name="formulario" onsubmit="return validateForm()">
+
+                    <tr>
+                        <td>Nome Completo*</td>
+                        <td><input type="text" name="nome"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Nome do Pai</td>
+                        <td colspan="5"><input type="text" name="nomePai"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Nome da Mãe*</td>
+                        <td colspan="5"><input type="text" name="nomeMãe"></td>
+                    </tr>
+
+                    <tr>
+                        <td>CPF*</td>
+                        <td colspan="5"><input type="text" name="CPF"> </td>
+                    </tr>
+
+                    <tr>
+                        <td>RG</td>
+                        <td colspan="5"><input type="text" name="RG"> </td>
+                    </tr>
+
+                    <tr>
+                        <td>E-mail*</td>
+                        <td colspan="5"><input type="text" name="email"> </td>
+                    </tr>
+                    <tr>
+                        <td>Telefone*</td>
+                        <td colspan="5"><input type="text" name="telefone"> </td>
+                    </tr>
+                    <tr>
+                        <td>Endereço</td>
+                        <td><input type="text" name="Endereco:"></td>
+                        <td>Bairro</td>
+                        <td><input type="text" name="Bairro:"></td>
+                        <td>Número</td>
+                        <td><input type="text" name="Numero:"></td>
+                    </tr>
+
+                    <tr>
+                        <td>CEP</td>
+                        <td><input type="text" name="Numero:"></td>
+                        </td>
+                        <td><a href="http://www.buscacep.correios.com.br/sistemas/buscacep/"
+                                target="iframe_principal">Consulte o CEP aqui</a></td>
+                        <td colspan="3"><iframe width="100%" height="100%" frameborder="0" name="iframe_principal">
+                                <p>Seu browser não suporta iframes</p>
+                        </td>
+
+                        </iframe>
+                    </tr>
+                    <tr>
+
+                        <td>Gênero</td>
+                        <td colspan="5"><input type="radio" name="gender" value="male" checked> Masculino<br>
+                            <input type="radio" name="gender" value="female"> Feminino<br>
+                            <input type="radio" name="gender" value="other"> Não Informar
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="right"><input type="submit" value="Enviar" class="botao_compra">
+                    </tr>
+
+                </form>
+            </table>
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="rodape">
+            <h1 class="aero_tour"> Aero Tour</h1>
+        </div>
+
+        <div class="container-rdp">
+            <div class="sociais">
+                <h2>Redes Sociais</h2>
+                <p>Instagram</p>
+                <p>Facebook</p>
+                <p>Youtube</p>
+            </div>
+            <div class="outros">
+                <h2>Cliente</h2>
+                <p>Faq</p>
+                <p>Atendimento</p>
+                <p>Financeiro</p>
+            </div>
+        </div>
+
+        <div class="endereco">
+            <p>Av. Eng. Abdias de Carvalho, 1678 - Madalena, Recife - PE, 50720-225
+            <p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
