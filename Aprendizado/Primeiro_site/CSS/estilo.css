@@ -111,12 +111,9 @@ body {
 }
 
 section {
-    display: inline-block;
-    margin-left: 5%;
-    margin-right: 5%;
     padding: 5%;
-    text-align: center;
-    width: 100%;
+    justify-items: center;
+    align-items: center;
 }
 
 section h2 {
@@ -160,6 +157,7 @@ footer {
     background: gainsboro;
     text-align: center;
     border-top: 5px solid rgb(46, 159, 46);
+    width: 100%;
 }
 
 .rodape {
@@ -193,82 +191,58 @@ footer {
 
 /*---------------------------------- OUTRAS PAGINAS ----------------------------------------*/
 
-/*.bloco2_passagem1 {
+#container_c_passagem {
+    justify-items: center;
+    align-items: center;
+}
 
+.TelaP {
     text-align: center;
-    background-color: rgb(199, 242, 186);
-    border-right: 10px;
-    padding: 20px 10px 20px 10px;
-    /*Tamanho maximo de expansão na tela*/
-max-width: 800px;
-min-width: 800px;
-height: 350px;
-/*Podemos importar fontes do https://fonts.google.com/ - Importa depois usa*/
-font-family: "Montserrat",
-serif;
-font-optical-sizing: auto;
-font-weight: 400;
-font-style: normal;
-padding: 10px;
-display: flex;
-gap: 40px;
-margin: 0 auto;
+    background-color: white;
+    /* padding - Topo x Direita x Base x Esquerda*/
+    padding: 130px 10px 20px 10px;
+    max-width: 800px;
+    min-width: 800px;
+    /* box-shadow: 2px 2px 4px rgb(141, 141, 141); */
+    /* border: 3px solid #180F4A; */
+    display: flex;
+    gap: 80px;
 }
 
-
-
-/* USEI O "P" PARA INDICAR QUE A MODIFICAÇÃO É EM PARAGRAFO*/
-/*p {
-    /*ESPACO NAS LATERIAS DO TEXTO*/
-margin-right: 20px;
-margin-left: 20px;
-/*ESPAÇO NO INICIO DO TEXTO*/
-text-indent: 0px;
-/*ALINHAMENTO DE TEXTO*/
-text-align: justify;
-/*ESPACO ENTRE LETRAS*/
-letter-spacing: 1px;
-/*ESPACO ENTRE LINHAS*/
-line-height: 1.1;
-/*ESPACO ENTRE PALAVRAS*/
-word-spacing: 10px;
-}
-
-/* USEI O "A" PARA INDICAR QUE A MODIFICAÇÃO É EM PARAGRAFO*/
-a {
-    /*CANCELAR DECORAÇÃO DE TEXTO - SUBLINHADO DE LINK*/
+.TelaP a {
     text-decoration: none;
+    color: black;
 }
 
-.container_quem {
-    border: 1px solid black;
+.TelaP_txt2 {
+    margin-top: 0%;
 }
 
-.container_img {
-    float: left;
-    margin-right: 20px;
+.TelaP_txt2 h2 {
+    font-size: ;
 }
+
+.TelaP_txt3 {
+    margin-top: 50%;
+}
+
 
 #container_login {
-    margin: 0 auto;
-    padding: 10px 20px 10px 20px;
-    background-color: rgb(234, 234, 236);
+    padding: 5%;
+    justify-content: center;
+    align-items: center;
 }
 
-.botao_entrada {
+.botao_compra {
     background-color: rgb(46, 159, 46);
     color: white;
     border: none;
+    height: 40px;
     border-radius: 10px;
     /* padding - Topo x Direita x Base x Esquerda*/
     padding: 10px 20px 10px 20px;
+    margin-top: 15%;
     box-shadow: 2px 2px 4px rgb(141, 141, 141);
 }
 
-.iniciar_sessao {
-    border: none;
-}
-
-.texto_bloco2 {
-    width: 200px;
-}
+.container_login_btn {}

@@ -2,62 +2,88 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!--Tag de tipo de caracter com acento-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Tag de combatibilidade de explorer-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.E.R.O - Login</title>
+    <!--Tag de compatibilidade de expansão de tela-->
+    <meta name="description" content="Esse é meu primeiro site">
+    <meta name="keywords" content="programacao,html,css,javascript">
+    <meta name="author" content="Dayvson Costa">
+    <title>Aero Tour | Viaje bem</title> <!--Tag de titulo-->
     <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
 </head>
 
 <body>
-    <div id="container_menu">
+
+    <nav class="navbar"> <!--criando o menu de navegação "navbar"-->
 
         <div class="logo">
-            <a style="color: rgb(8, 10, 61);" href="index.html">
-                <h1>A.E.R.O</h1>
+            <a href="index.html"> <!--A tag <a> significa angora=hyperlink-->
+                <h1>Aero Tour</h1>
             </a>
         </div>
 
-        <header class="menu">
+        <div class="menu">
             <a href="agendar_visita.html">Comprar passagens</a>
-            &nbsp;&nbsp;&nbsp; <!--TAG DE ESPAMENTO-->
-            <a href="login.html">Login</a>
-            &nbsp;&nbsp;&nbsp; <!--TAG DE ESPAMENTO-->
             <a href="quem_somos.html">Quem somos</a>
-        </header>
-
-        <br><br>
-    </div>
-
-    <form id="container_login">
-
-        <div class="iniciar_sessao">
-            <h1>Iniciar sessão</h1>
-
-            <!--CAIXA DE SELEÇÃO - NAME TEM QUE SER IGUAL-->
-            <!--<input type="radio" id="Cliente" name="Cliente" value="Cliente">
-            <label for="Cliente">Cliente</label>
-
-            <input type="radio" id="Representante" name="Cliente" value="Representante">
-            <label for="Representante">Representante</label><br><br>-->
-
-            <!--LEGENDA PARA EMAIL-->
-            <label for="campo_email">E-mail</label>
-            <!--ENTRADA DE DADOS TIPO EMAIL-->
-            <input id="campo_email" type="email" placeholder="Digite seu e-mail" required>
-            <br><br>
-            <label for="campo_senha">Senha</label>
-            <input id="campo_senha" type="password" placeholder="Digite sua senha" required>
-            <br><br>
+            <a id="botao" href="login.html">Login</a> <!--Criar o botão de login-->
         </div>
 
-        <div>
-            <!--BOTÃO-->
-            <input type="submit" value="Entrar" class="botao_entrada">
-        </div>
-        <!--<input type="checkbox" id="confirmar" name="Confirmar o agendamento" value="Confirmar o agendamento">
-        <label for="confirmar">Confirmar o agendamento</label><br><br>-->
+    </nav>
 
-    </form>
+    <section>
+
+        <form id="container_login">
+
+            <div class="iniciar_sessao">
+                <h1>Iniciar sessão</h1>
+                <!--LEGENDA PARA EMAIL-->
+                <label for="campo_email">E-mail</label>
+                <!--ENTRADA DE DADOS TIPO EMAIL-->
+                <input id="campo_email" type="email" placeholder="Digite seu e-mail" required>
+                <br><br>
+                <label for="campo_senha">Senha</label>
+                <input id="campo_senha" type="password" placeholder="Digite sua senha" required>
+                <br><br>
+            </div>
+
+            <div class="container_login_btn">
+                <!--BOTÃO-->
+                <input type="submit" value="Entrar" class="botao_compra">
+            </div>
+
+        </form>
+
+    </section>
+
+    <footer>
+
+        <div class="rodape">
+            <h1 class="aero_tour"> Aero Tour</h1>
+        </div>
+
+        <div class="container-rdp">
+            <div class="sociais">
+                <h2>Redes Sociais</h2>
+                <p>Instagram</p>
+                <p>Facebook</p>
+                <p>Youtube</p>
+            </div>
+            <div class="outros">
+                <h2>Cliente</h2>
+                <p>Faq</p>
+                <p>Atendimento</p>
+                <p>Financeiro</p>
+            </div>
+        </div>
+
+        <div class="endereco">
+            <p>Av. Eng. Abdias de Carvalho, 1678 - Madalena, Recife - PE, 50720-225
+            <p>
+        </div>
+
+    </footer>
+
 </body>
 
 </html>
