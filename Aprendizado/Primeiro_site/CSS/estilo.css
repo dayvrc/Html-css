@@ -233,16 +233,78 @@ footer {
     align-items: center;
 }
 
-.botao_compra {
+.iniciar_sessao {
+    display: flex;
+    flex-direction: column;
+    /* Organiza os elementos em coluna */
+    max-width: 400px;
+    /* Define uma largura máxima */
+    margin: auto;
+    /* Centraliza o formulário na página */
+}
+
+.btn_1 {
     background-color: rgb(46, 159, 46);
     color: white;
     border: none;
     height: 40px;
     border-radius: 10px;
     /* padding - Topo x Direita x Base x Esquerda*/
-    /* padding: 10px 20px 10px 20px; */
+    padding: 10px 20px 10px 20px;
     box-shadow: 2px 2px 4px rgb(141, 141, 141);
     margin: 10px;
+    text-decoration: none;
 }
 
-.container_login_btn {}
+.cadastro {
+    padding: 3%;
+}
+
+.form_cadastro {
+    display: flex;
+    flex-direction: column;
+    /* Organiza os elementos em coluna */
+    gap: 10px;
+    /* Espaçamento entre os campos */
+    max-width: 400px;
+    /* Define uma largura máxima */
+    margin: auto;
+    /* Centraliza o formulário na página */
+}
+
+.form_cadastro label {
+    font-weight: bold;
+    /* Destaca os rótulos */
+}
+
+.form_cadastro input,
+.form_cadastro select,
+.form_cadastro button {
+    padding: 10px;
+    /* Espaçamento interno */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    border: 1px solid #ccc;
+    /* Borda cinza clara */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    width: 100%;
+    /* Preenche a largura do container pai */
+}
+
+.form_cadastro button {
+    background-color: #02356b;
+    /* Cor do botão */
+    color: white;
+    /* Cor do texto do botão */
+    border: none;
+    cursor: pointer;
+    /* Muda o cursor para "mãozinha" */
+    transition: background-color 0.3s;
+    /* Suaviza mudanças de cor */
+}
+
+.form_cadastro button:hover {
+    background-color: #0056b3;
+    /* Cor ao passar o mouse no botão */
+}
