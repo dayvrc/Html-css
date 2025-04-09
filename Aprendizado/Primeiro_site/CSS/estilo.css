@@ -218,10 +218,6 @@ footer {
     margin-top: 0%;
 }
 
-.TelaP_txt2 h2 {
-    font-size: ;
-}
-
 .TelaP_txt3 {
     margin-top: 50%;
 }
@@ -244,7 +240,7 @@ footer {
 }
 
 .btn_1 {
-    background-color: rgb(46, 159, 46);
+    background-color: #180F4A;
     color: white;
     border: none;
     height: 40px;
@@ -254,6 +250,11 @@ footer {
     box-shadow: 2px 2px 4px rgb(141, 141, 141);
     margin: 10px;
     text-decoration: none;
+}
+
+.btn_1:hover {
+    background-color: rgb(46, 159, 46);
+    /* Cor ao passar o mouse no botão */
 }
 
 .cadastro {
@@ -304,7 +305,14 @@ footer {
     /* Suaviza mudanças de cor */
 }
 
+
 .form_cadastro button:hover {
-    background-color: #0056b3;
+    background-color: rgb(46, 159, 46);
     /* Cor ao passar o mouse no botão */
+}
+
+
+
+.section_cadastro {
+    padding: 7%;
 }
