@@ -48,11 +48,18 @@ body {
     text-decoration: none;
 }
 
+
 .menu {
     flex: 70%;
     text-align: right;
     padding: 20px;
 }
+
+html {
+    /*Tag para deixar a rolagem suave*/
+    scroll-behavior: smooth;
+}
+
 
 .menu a {
     /*Le-se "Aplicar as tags <a> da classe menu*/
@@ -133,7 +140,7 @@ section h2 {
     color: #180F4A;
 }
 
-.container_passagens {
+#container_passagens {
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -189,6 +196,8 @@ footer {
 }
 
 
+
+
 /*---------------------------------- OUTRAS PAGINAS ----------------------------------------*/
 
 #container_c_passagem {
@@ -229,6 +238,7 @@ footer {
     align-items: center;
 }
 
+
 .iniciar_sessao {
     display: flex;
     flex-direction: column;
@@ -261,6 +271,7 @@ footer {
     padding: 3%;
 }
 
+.iniciar_sessao,
 .form_cadastro {
     display: flex;
     flex-direction: column;
@@ -273,11 +284,13 @@ footer {
     /* Centraliza o formulário na página */
 }
 
+.iniciar_sessao label,
 .form_cadastro label {
     font-weight: bold;
     /* Destaca os rótulos */
 }
 
+.iniciar_sessao input,
 .form_cadastro input,
 .form_cadastro select,
 .form_cadastro button {

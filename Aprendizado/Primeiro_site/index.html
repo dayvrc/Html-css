@@ -1,6 +1,7 @@
 <!DOCTYPE html> <!--Tag que mostra que o documento e tipo html-->
 <html lang="pt-br"> <!--Tag que inicia o html e lang define idioma-->
 
+<!-- SHIFT + ALT + A - ATALHO DE COMENTARIO -->
 
 <head> <!--Tag cabeça o que está aqui não e visto pelo user só navegador-->
     <meta charset="UTF-8"> <!--Tag de tipo de caracter com acento-->
@@ -26,9 +27,7 @@
         </div>
 
         <div class="menu">
-            <div class="btn-home-comprar">
-                <a href="#">Comprar passagens</a>
-            </div>
+            <a href="#container_passagens">Comprar passagens</a>
             <a href="#">Quem somos</a>
             <a id="botao" href="login.html">Login</a> <!--Criar o botão de login-->
         </div>
@@ -57,7 +56,7 @@
 
     <section> <!--Criando uma seção para apresentar-->
 
-        <div class="container_passagens">
+        <div id="container_passagens">
 
             <div class="bloco_passagem">
                 <a style="color: black; text-decoration: none;" href="passagem.html">
@@ -157,21 +156,6 @@
         </div>
 
     </footer>
-
-    <!-- O botão existente -->
-    <button class="btn-home-comprar">Clique aqui</button>
-
-    <!-- Partes da página -->
-    <section style="background-color: lightblue;">Seção 1</section>
-    <section id="destino" style="background-color: lightgreen;">Destino da página</section>
-    <section style="background-color: lightcoral;">Seção 3</section>
-
-    <!-- Script para fazer a rolagem -->
-    <script>
-        document.getElementById("btn-home-comprar").addEventListener("click", function () {
-            document.getElementById("container_passagens").scrollIntoView({ behavior: "smooth" });
-        });
-    </script>
 
 </body>
 
