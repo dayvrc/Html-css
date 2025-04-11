@@ -17,6 +17,7 @@ body {
     /*Remove qualquer margem apricada pelo navegador*/
     font-family: 'roboto', sans-serif;
     /*Define roboto como fonte padrão e sans-serif como secundaria*/
+    scroll-behavior: smooth !important;
 }
 
 .navbar {
@@ -54,12 +55,6 @@ body {
     text-align: right;
     padding: 20px;
 }
-
-html {
-    /*Tag para deixar a rolagem suave*/
-    scroll-behavior: smooth;
-}
-
 
 .menu a {
     /*Le-se "Aplicar as tags <a> da classe menu*/
@@ -146,6 +141,7 @@ section h2 {
     justify-content: center;
     align-items: center;
     max-width: max-content;
+    height: 100vh;
 }
 
 .bloco_passagem {
@@ -228,7 +224,7 @@ footer {
 }
 
 .TelaP_txt3 {
-    margin-top: 50%;
+    margin-top: 30%;
 }
 
 
