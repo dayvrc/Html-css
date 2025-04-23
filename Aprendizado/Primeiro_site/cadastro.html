@@ -11,7 +11,6 @@
     <meta name="author" content="Dayvson Costa">
     <title>Aero Tour | Viaje bem</title> <!--Tag de titulo-->
     <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
-    <script type="text/javascript" src="JS/global.js"></script>
 </head>
 
 <body>
@@ -38,7 +37,7 @@
             <h2>Cadastro</h2>
         </div>
 
-        <form id="cadastroForm" action="PHP/index.php" method="post" name="formulario" class="form_cadastro">
+        <form id="cadastroForm" method="post" name="formulario" class="form_cadastro">
             <!-- Nome -->
             <label for="nome">Nome Completo*</label>
             <input type="text" id="nome" name="nome" required>
@@ -69,6 +68,11 @@
             <!-- Botão de Envio -->
             <button type="submit" class="botao-compra">Enviar</button>
         </form>
+
+        <div id="popupMensagem" class="popup">
+            <p id="mensagemPopup"></p>
+        </div>
+
     </section>
 
     <footer>
@@ -99,11 +103,8 @@
 
     </footer>
 
-    <div id="popupErro" class="popup">
-        <p id="mensagemErro"></p>
-        <button onclick="fecharPopup()">Fechar</button>
-    </div>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="JS/global.js"></script>
 
 </body>
 

@@ -1,26 +1,44 @@
-document.getElementById("cadastroForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
+document.addEventListener("DOMContentLoaded", function () {
+    let formulario = document.getElementById("cadastroForm");
 
-    let formData = new FormData(this);
+    if (formulario) {
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio normal
 
-    fetch("PHP/index.php", {
-        method: "POST",
-        body: formData
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.erro) {
-                document.getElementById("mensagemErro").innerText = data.erro;
-                document.getElementById("popupErro").style.display = "block";
-            } else {
-                alert("Cadastro realizado com sucesso!");
-                window.location.reload();
-            }
-        })
-        .catch(error => console.error("Erro ao processar:", error));
+            let formData = new FormData(formulario);
+
+            fetch("PHP/index.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    let popup = document.getElementById("popupMensagem");
+                    let mensagem = document.getElementById("mensagemPopup");
+
+                    if (data.erro) {
+                        mensagem.innerText = data.erro;
+                        popup.classList.add("erro");
+                        popup.classList.remove("sucesso");
+                    } else {
+                        mensagem.innerText = data.sucesso;
+                        popup.classList.add("sucesso");
+                        popup.classList.remove("erro");
+
+                        setTimeout(() => {
+                            window.location.href = data.redirect;
+                        }, 3000);
+                    }
+
+                    popup.style.display = "block";
+                })
+                .catch(error => console.error("Erro ao processar:", error));
+        });
+    } else {
+        console.error("Elemento #cadastroForm não encontrado!");
+    }
 });
 
-// Select all links with hashes
 $('a[href*="#"]')
     // Remove links that don't actually link to anything
     .not('[href="#"]')
