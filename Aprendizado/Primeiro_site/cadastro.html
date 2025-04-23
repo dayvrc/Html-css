@@ -38,7 +38,7 @@
             <h2>Cadastro</h2>
         </div>
 
-        <form action="banco.php" method="post" name="formulario" onsubmit="return validateForm()" class="form_cadastro">
+        <form id="cadastroForm" action="PHP/index.php" method="post" name="formulario" class="form_cadastro">
             <!-- Nome -->
             <label for="nome">Nome Completo*</label>
             <input type="text" id="nome" name="nome" required>
@@ -98,6 +98,12 @@
         </div>
 
     </footer>
+
+    <div id="popupErro" class="popup">
+        <p id="mensagemErro"></p>
+        <button onclick="fecharPopup()">Fechar</button>
+    </div>
+
 
 </body>
 

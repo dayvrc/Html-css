@@ -1,15 +1,24 @@
-function validateForm() {
-    var x = document.forms["formulario"]["nome"].value;
+document.getElementById("cadastroForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
 
-    if (x == null || x == "") {
-        alert("Campos com o (*) são obrigatórios!");
-        return false;
-    } else {
-        confirm("Deseja enviar os dados?");
-        alert("Cadastro Efetuado!")
-    }
+    let formData = new FormData(this);
 
-}
+    fetch("PHP/index.php", {
+        method: "POST",
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.erro) {
+                document.getElementById("mensagemErro").innerText = data.erro;
+                document.getElementById("popupErro").style.display = "block";
+            } else {
+                alert("Cadastro realizado com sucesso!");
+                window.location.reload();
+            }
+        })
+        .catch(error => console.error("Erro ao processar:", error));
+});
 
 // Select all links with hashes
 $('a[href*="#"]')
