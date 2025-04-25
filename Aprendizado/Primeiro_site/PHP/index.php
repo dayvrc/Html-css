@@ -38,7 +38,7 @@ try {
         $stmt->execute();
 
         // Retornar sucesso sem exibir o JSON direto na tela
-        echo json_encode(["sucesso" => "Cadastro realizado com sucesso!", "redirect" => "login.php"]);
+        echo json_encode(["sucesso" => "Cadastro realizado com sucesso!", "redirect" => "login.html"]);
         exit;
     }
 
