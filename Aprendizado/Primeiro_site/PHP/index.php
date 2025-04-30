@@ -28,13 +28,14 @@ try {
         }
 
         // Inserir os dados no banco
-        $sql = "INSERT INTO usuarios (nome, cpf, email, telefone, genero) VALUES (:nome, :cpf, :email, :telefone, :genero)";
+        $sql = "INSERT INTO usuarios (nome, cpf, email, telefone, genero, senha) VALUES (:nome, :cpf, :email, :telefone, :genero, :senha)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nome', $_POST["nome"]);
         $stmt->bindParam(':cpf', $_POST["cpf"]);
         $stmt->bindParam(':email', $_POST["email"]);
         $stmt->bindParam(':telefone', $_POST["telefone"]);
-        $stmt->bindParam(':genero', $_POST["gender"]);
+        $stmt->bindParam(':genero', $_POST["genero"]);
+        $stmt->bindParam(':senha', $_POST["senha"]);
         $stmt->execute();
 
         // Retornar sucesso sem exibir o JSON direto na tela
