@@ -26,6 +26,16 @@ try {
             echo json_encode(["erro" => "Este email já está cadastrado. Tente outro!"]);
             exit;
         }
+        
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM usuarios WHERE cpf = :cpf");
+        $stmt->bindParam(':cpf', $_POST["cpf"]);
+        $stmt->execute();
+        $cpfExiste = $stmt->fetchColumn();
+
+        if ($cpfExiste > 0) {
+            echo json_encode(["erro" => "Este CPF já está cadastrado no sistema! Caso tenha esquecido sua senha, tente recuperá-la. 🔐"]);
+            exit;
+        }
 
         // Inserir os dados no banco
         $sql = "INSERT INTO usuarios (nome, cpf, email, telefone, genero, senha) VALUES (:nome, :cpf, :email, :telefone, :genero, :senha)";
