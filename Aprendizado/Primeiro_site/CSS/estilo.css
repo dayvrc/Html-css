@@ -228,8 +228,8 @@ footer {
 }
 
 
-#container_login {
-    padding: 5%;
+#loginForm {
+    padding: 8%;
     justify-content: center;
     align-items: center;
 }

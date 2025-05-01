@@ -34,7 +34,7 @@
 
     <section>
 
-        <form id="container_login">
+        <form id="loginForm">
 
             <div class="cadastro">
                 <h2 style="text-align: center; padding: 10%;">Login</h2>
@@ -52,8 +52,9 @@
             <div class="container_login_btn">
                 <!--BOTÃO-->
                 <div>
+                    <br><br>
                     <a href="cadastro.html" class="btn_1">Cadastre-se</a>
-                    <a href="login.php" class="btn_1" onclick="enviarLogin()">Entrar</a>
+                    <button class="btn_1" type="button" onclick="enviarLogin()">Entrar</button>
                 </div>
                 <div>
 
@@ -61,6 +62,7 @@
             </div>
 
         </form>
+
 
     </section>
 
@@ -94,6 +96,26 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="JS/global.js"></script>
+
+    <script>
+        function enviarLogin() {
+            let formData = new FormData(document.getElementById("loginForm"));
+
+            fetch("PHP/login.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert(data.erro);
+                    } else {
+                        window.location.href = data.redirect; // Redireciona para a próxima página
+                    }
+                })
+                .catch(error => console.error("Erro ao processar:", error));
+        }
+    </script>
 
 </body>
 

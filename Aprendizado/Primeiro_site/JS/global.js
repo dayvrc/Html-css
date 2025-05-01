@@ -74,3 +74,27 @@ $('a[href*="#"]')
             }
         }
     });
+
+function enviarLogin() {
+    document.getElementById("loginForm").submit();
+}
+
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let formData = new FormData(this);
+
+    fetch("login.php", {
+        method: "POST",
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.erro) {
+                alert(data.erro);
+            } else {
+                window.location.href = data.redirect; // Redireciona para passagem.html
+            }
+        })
+        .catch(error => console.error("Erro ao processar:", error));
+});
