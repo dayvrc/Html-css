@@ -2,70 +2,58 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8"> <!--Tag de tipo de caracter com acento-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Tag de combatibilidade de explorer-->
+    <meta charset="UTF-8"> <!-- Tag de tipo de caractere com acento -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Tag de compatibilidade de explorer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Tag de compatibilidade de expansão de tela-->
     <meta name="description" content="Esse é meu primeiro site">
     <meta name="keywords" content="programacao,html,css,javascript">
     <meta name="author" content="Dayvson Costa">
-    <title>Aero Tour | Viaje bem</title> <!--Tag de titulo-->
-    <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
+    <title>Aero Tour | Viaje bem</title>
+    <link rel="stylesheet" href="CSS/estilo.css"> <!-- Link de CSS -->
 </head>
 
 <body>
 
-    <nav class="navbar"> <!--criando o menu de navegação "navbar"-->
+    <!-- Incluindo a navbar -->
+    <?php include('navbarLogin.php'); ?>
 
-        <div class="logo">
-            <a href="index.html"> <!--A tag <a> significa angora=hyperlink-->
-                <h1>Aero Tour</h1>
-            </a>
-        </div>
-
-        <div class="menu">
-            <a href="#">Comprar passagens</a>
-            <a href="#">Quem somos</a>
-            <a id="botao" href="login.html">Login</a> <!--Criar o botão de login-->
-        </div>
-
-    </nav>
-
-    <section>
-
-        <div id="container_c_passagem">
+    <main>
+        <section id="container_c_passagem">
 
             <div class="TelaP">
 
                 <div class="TelaP_img">
-                    <img src="CSS/img/Salvador.png" width="500">
+                    <img src="CSS/img/Salvador.png" width="500" alt="Imagem de Salvador">
                 </div>
 
                 <div class="TelaP_txt">
-
                     <div class="TelaP_txt2">
                         <h2> Salvador</h2>
                     </div>
 
                     <div class="TelaP_txt3">
-                        <P style="font-size: 10px;">Ida e Volta</P>
+                        <p style="font-size: 10px;">Ida e Volta</p>
                         <p style="font-size: 20px;">R$ 2.000</p>
-                        <p style="font-size: 10px;"> À VISTA</p>
-                        <P>10x R$200</P>
+                        <p style="font-size: 10px;">À VISTA</p>
+                        <p>10x R$200</p>
                         <br>
-                        <a class="btn_1" style="color: white;" href="login.html">Comprar</a>
+                        
+                        <?php if (isset($_SESSION['nome'])): ?>
+                            <a class="btn_1" style="color: white;" href="cadastro.php">Comprar</a>
+                        <?php else: ?>
+                            <a class="btn_1" style="color: white;" href="login.php">Comprar</a>
+                        <?php endif; ?>
+
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
+    </main>
 
     <footer>
-
         <div class="rodape">
             <h1 class="aero_tour"> Aero Tour</h1>
         </div>
@@ -86,10 +74,8 @@
         </div>
 
         <div class="endereco">
-            <p>Av. Eng. Abdias de Carvalho, 1678 - Madalena, Recife - PE, 50720-225
-            <p>
+            <p>Av. Eng. Abdias de Carvalho, 1678 - Madalena, Recife - PE, 50720-225</p>
         </div>
-
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

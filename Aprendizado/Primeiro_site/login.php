@@ -15,26 +15,13 @@
 
 <body>
 
-    <nav class="navbar"> <!--criando o menu de navegação "navbar"-->
-
-        <div class="logo">
-            <a href="index.html"> <!--A tag <a> significa angora=hyperlink-->
-                <h1>Aero Tour</h1>
-            </a>
-        </div>
-
-        <div class="menu">
-            <a href="#">Comprar passagens</a>
-            <a href="#">Quem somos</a>
-            <a id="botao" href="login.html">Login</a> <!--Criar o botão de login-->
-        </div>
-
-
-    </nav>
+    <!-- Incluindo a navbar -->
+    <?php include('navbarLogin.php'); ?>
 
     <section>
 
-        <form id="loginForm" method="POST">
+        <form id="loginForm" method="POST" action="PHP/login.php">
+
 
             <div class="cadastro">
                 <h2 style="text-align: center; padding: 10%;">Login</h2>
@@ -53,8 +40,8 @@
                 <!--BOTÃO-->
                 <div>
                     <br><br>
-                    <a href="cadastro.html" class="btn_1">Cadastre-se</a>
-                    <button class="btn_1" type="submit" onclick="enviarLogin()">Entrar</button>
+                    <a href="cadastro.php" class="btn_1">Cadastre-se</a>
+                    <button class="btn_1" type="submit">Entrar</button>
                 </div>
                 <div>
 

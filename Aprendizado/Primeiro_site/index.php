@@ -18,21 +18,8 @@
 
 <body> <!--Tag onde o fica o html que o usuario ver-->
 
-    <nav class="navbar"> <!--criando o menu de navegação "navbar"-->
-
-        <div class="logo">
-            <a href="index.html"> <!--A tag <a> significa angora=hyperlink-->
-                <h1>Aero Tour</h1>
-            </a>
-        </div>
-
-        <div class="menu">
-            <a href="#container_passagens">Comprar passagens</a>
-            <a href="#">Quem somos</a>
-            <a id="botao" href="login.html">Login</a> <!--Criar o botão de login-->
-        </div>
-
-    </nav>
+    <!-- Incluindo a navbar -->
+    <?php include('navbarLogin.php'); ?>
 
     <header class="header"> <!--HTML semântico de cabeçalho-->
 
@@ -45,7 +32,7 @@
         </div>
 
         <div class="img-banner">
-            <img style="max-width: 99%;" src="img/travel.jpg">
+            <img style="max-width: 99%;" src="CSS\img\travel.jpg">
         </div>
 
         <div class="txt-passagens">
@@ -59,7 +46,7 @@
         <div id="container_passagens">
 
             <div class="bloco_passagem">
-                <a style="color: black; text-decoration: none;" href="passagem.html">
+                <a style="color: black; text-decoration: none;" href="passagem.php">
                     <img src="CSS/img/Salvador.png" width="250">
                     <p>PASSAGEM</p>
                     <h3>Voos para Salvador</h3>
@@ -75,7 +62,7 @@
             </div>
 
             <div class="bloco_passagem">
-                <a style="color: black;text-decoration: none;" href="passagem.html">
+                <a style="color: black;text-decoration: none;" href="passagem.php">
                     <img src="CSS/img/Salvador.png" width="250">
                     <p>PASSAGEM</p>
                     <h3>Voos para Salvador</h3>
@@ -91,7 +78,7 @@
             </div>
 
             <div class="bloco_passagem">
-                <a style="color: black;text-decoration: none;" href="passagem.html">
+                <a style="color: black;text-decoration: none;" href="passagem.php">
                     <img src="CSS/img/Salvador.png" width="250">
                     <p>PASSAGEM</p>
                     <h3>Voos para Salvador</h3>
@@ -107,7 +94,7 @@
             </div>
 
             <div class="bloco_passagem">
-                <a style="color: black;text-decoration: none;" href="passagem.html">
+                <a style="color: black;text-decoration: none;" href="passagem.php">
                     <img src="CSS/img/Salvador.png" width="250">
                     <p>PASSAGEM</p>
                     <h3>Voos para Salvador</h3>

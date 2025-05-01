@@ -56,7 +56,7 @@ try {
         $stmt->bindParam(':senha', $senhaHash);
         $stmt->execute();
 
-        echo json_encode(["sucesso" => "Cadastro realizado com sucesso!", "redirect" => "login.html"]);
+        echo json_encode(["sucesso" => "Cadastro realizado com sucesso!", "redirect" => "login.php"]);
         exit;
     }
 

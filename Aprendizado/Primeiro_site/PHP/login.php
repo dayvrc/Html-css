@@ -1,8 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-session_start();
-header('Content-Type: application/json');
 
 $host = "localhost";
 $dbname = "projetohtml";
@@ -24,25 +20,20 @@ try {
         $stmt->execute();
         $usuario = $stmt->fetch();
 
-        if (!$usuario) {
-            file_put_contents('C:/xampp/htdocs/debug_login.txt', "Usuário não encontrado para o email: $email\n", FILE_APPEND);
+        if (!$usuario || !password_verify($senha, $usuario["senha"])) {
             echo json_encode(["erro" => "Email ou senha incorretos!"]);
             exit;
         }
-        
-        file_put_contents('C:/xampp/htdocs/debug_login.txt', "Senha digitada: $senha\nSenha no banco: {$usuario['senha']}\n", FILE_APPEND);
-        
-        if (!password_verify($senha, $usuario["senha"])) {
-            file_put_contents('C:/xampp/htdocs/debug_login.txt', "Password_verify falhou\n", FILE_APPEND);
-            echo json_encode(["erro" => "Email ou senha incorretos!"]);
-            exit;
-        }
-        
 
+        // Armazenando o nome do usuário na sessão
         $_SESSION["usuario_id"] = $usuario["id"];
         $_SESSION["usuario_nome"] = $usuario["nome"];
 
-        echo json_encode(["sucesso" => "Login realizado!", "redirect" => "passagem.html"]);
+        echo json_encode([
+            "sucesso" => "Login realizado!",
+            "usuario_nome" => $usuario["nome"],
+            "redirect" => "index.php" // Ou redirecionamento para a página de carrinho, se desejado
+        ]);
         exit;
     }
 

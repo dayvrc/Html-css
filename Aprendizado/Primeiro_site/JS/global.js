@@ -74,31 +74,3 @@ $('a[href*="#"]')
             }
         }
     });
-
-document.addEventListener("DOMContentLoaded", function () {
-    let loginForm = document.getElementById("loginForm");
-
-    if (loginForm) {
-        loginForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Impede a atualização da página
-
-            let formData = new FormData(loginForm);
-
-            fetch("PHP/login.php", {
-                method: "POST",
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.erro) {
-                        alert(data.erro); // Exibe mensagem de erro
-                    } else {
-                        window.location.href = data.redirect; // Redireciona para passagem.html
-                    }
-                })
-                .catch(error => console.error("Erro ao processar:", error));
-        });
-    } else {
-        console.error("Elemento #loginForm não encontrado!");
-    }
-});
