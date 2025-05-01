@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json'); // Define que a resposta será JSON
+header('Content-Type: application/json');
 
 $host = "localhost";
 $dbname = "projetohtml";
@@ -7,48 +7,55 @@ $user = "dayvson";
 $password = "123456";
 
 try {
-    // Conexão com o banco de dados
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST["email"];
+        $nome     = $_POST["nome"]     ?? "";
+        $cpf      = $_POST["cpf"]      ?? "";
+        $email    = $_POST["email"]    ?? "";
+        $telefone = $_POST["telefone"] ?? "";
+        $genero   = $_POST["genero"]   ?? "";
+        $senha    = $_POST["senha"]    ?? "";
+
+        if (empty($nome) || empty($cpf) || empty($email) || empty($telefone) || empty($genero) || empty($senha)) {
+            echo json_encode(["erro" => "Todos os campos são obrigatórios."]);
+            exit;
+        }
 
         // Verificar se o email já existe
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM usuarios WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-        $emailExiste = $stmt->fetchColumn();
-
-        if ($emailExiste > 0) {
-            echo json_encode(["erro" => "Este email já está cadastrado. Tente outro!"]);
+        if ($stmt->fetchColumn() > 0) {
+            echo json_encode(["erro" => "Este email já está cadastrado."]);
             exit;
         }
-        
+
+        // Verificar se o CPF já existe
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM usuarios WHERE cpf = :cpf");
-        $stmt->bindParam(':cpf', $_POST["cpf"]);
+        $stmt->bindParam(':cpf', $cpf);
         $stmt->execute();
-        $cpfExiste = $stmt->fetchColumn();
-
-        if ($cpfExiste > 0) {
-            echo json_encode(["erro" => "Este CPF já está cadastrado no sistema! Caso tenha esquecido sua senha, tente recuperá-la. 🔐"]);
+        if ($stmt->fetchColumn() > 0) {
+            echo json_encode(["erro" => "Este CPF já está cadastrado."]);
             exit;
         }
 
-        // Inserir os dados no banco
-        $sql = "INSERT INTO usuarios (nome, cpf, email, telefone, genero, senha) VALUES (:nome, :cpf, :email, :telefone, :genero, :senha)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':nome', $_POST["nome"]);
-        $stmt->bindParam(':cpf', $_POST["cpf"]);
-        $stmt->bindParam(':email', $_POST["email"]);
-        $stmt->bindParam(':telefone', $_POST["telefone"]);
-        $stmt->bindParam(':genero', $_POST["genero"]);
-        $stmt->bindParam(':senha', $_POST["senha"]);
+        // Hash da senha
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+        // Inserir usuário
+        $stmt = $pdo->prepare("INSERT INTO usuarios (nome, cpf, email, telefone, genero, senha) VALUES (:nome, :cpf, :email, :telefone, :genero, :senha)");
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':telefone', $telefone);
+        $stmt->bindParam(':genero', $genero);
+        $stmt->bindParam(':senha', $senhaHash);
         $stmt->execute();
 
-        // Retornar sucesso sem exibir o JSON direto na tela
         echo json_encode(["sucesso" => "Cadastro realizado com sucesso!", "redirect" => "login.html"]);
         exit;
     }
@@ -57,4 +64,3 @@ try {
     echo json_encode(["erro" => "Erro no banco de dados: " . $e->getMessage()]);
     exit;
 }
-?>

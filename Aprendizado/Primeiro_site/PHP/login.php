@@ -9,8 +9,6 @@ $dbname = "projetohtml";
 $user = "dayvson";
 $password = "123456";
 
-
-
 try {
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -26,24 +24,25 @@ try {
         $stmt->execute();
         $usuario = $stmt->fetch();
 
-        if (!$usuario || !password_verify($senha, $usuario["senha"])) {
+        if (!$usuario) {
+            file_put_contents('C:/xampp/htdocs/debug_login.txt', "Usuário não encontrado para o email: $email\n", FILE_APPEND);
             echo json_encode(["erro" => "Email ou senha incorretos!"]);
             exit;
         }
+        
+        file_put_contents('C:/xampp/htdocs/debug_login.txt', "Senha digitada: $senha\nSenha no banco: {$usuario['senha']}\n", FILE_APPEND);
+        
+        if (!password_verify($senha, $usuario["senha"])) {
+            file_put_contents('C:/xampp/htdocs/debug_login.txt', "Password_verify falhou\n", FILE_APPEND);
+            echo json_encode(["erro" => "Email ou senha incorretos!"]);
+            exit;
+        }
+        
 
         $_SESSION["usuario_id"] = $usuario["id"];
         $_SESSION["usuario_nome"] = $usuario["nome"];
 
-        echo json_encode(["sucesso" => "Login realizado com sucesso!", "redirect" => "passagem.html"]);
-
-        echo json_encode([
-            "sucesso" => "Login realizado!",
-            "redirect" => "passagem.html",
-            "usuario_id" => $_SESSION["usuario_id"] ?? null,
-            "usuario_nome" => $_SESSION["usuario_nome"] ?? null
-        ]);
-        
-
+        echo json_encode(["sucesso" => "Login realizado!", "redirect" => "passagem.html"]);
         exit;
     }
 

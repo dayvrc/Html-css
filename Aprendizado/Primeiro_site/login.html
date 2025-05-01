@@ -34,7 +34,7 @@
 
     <section>
 
-        <form id="loginForm">
+        <form id="loginForm" method="POST">
 
             <div class="cadastro">
                 <h2 style="text-align: center; padding: 10%;">Login</h2>
@@ -44,9 +44,9 @@
                 <!--LEGENDA PARA EMAIL-->
                 <label for="campo_email">E-mail</label>
                 <!--ENTRADA DE DADOS TIPO EMAIL-->
-                <input id="campo_email" type="email" placeholder="Digite seu e-mail" required>
+                <input id="campo_email" type="email" name="email" placeholder="Digite seu e-mail" required>
                 <label for="campo_senha">Senha</label>
-                <input id="campo_senha" type="password" placeholder="Digite sua senha" required>
+                <input id="campo_senha" type="password" name="senha" placeholder="Digite sua senha" required>
             </div>
 
             <div class="container_login_btn">
@@ -54,7 +54,7 @@
                 <div>
                     <br><br>
                     <a href="cadastro.html" class="btn_1">Cadastre-se</a>
-                    <button class="btn_1" type="button" onclick="enviarLogin()">Entrar</button>
+                    <button class="btn_1" type="submit" onclick="enviarLogin()">Entrar</button>
                 </div>
                 <div>
 
@@ -94,28 +94,8 @@
 
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="Jquery/jquery-3.7.1.js"></script>
     <script src="JS/global.js"></script>
-
-    <script>
-        function enviarLogin() {
-            let formData = new FormData(document.getElementById("loginForm"));
-
-            fetch("PHP/login.php", {
-                method: "POST",
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.erro) {
-                        alert(data.erro);
-                    } else {
-                        window.location.href = data.redirect; // Redireciona para a próxima página
-                    }
-                })
-                .catch(error => console.error("Erro ao processar:", error));
-        }
-    </script>
 
 </body>
 

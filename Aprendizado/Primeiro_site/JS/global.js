@@ -75,26 +75,30 @@ $('a[href*="#"]')
         }
     });
 
-function enviarLogin() {
-    document.getElementById("loginForm").submit();
-}
+document.addEventListener("DOMContentLoaded", function () {
+    let loginForm = document.getElementById("loginForm");
 
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault();
+    if (loginForm) {
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede a atualização da página
 
-    let formData = new FormData(this);
+            let formData = new FormData(loginForm);
 
-    fetch("login.php", {
-        method: "POST",
-        body: formData
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.erro) {
-                alert(data.erro);
-            } else {
-                window.location.href = data.redirect; // Redireciona para passagem.html
-            }
-        })
-        .catch(error => console.error("Erro ao processar:", error));
+            fetch("PHP/login.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert(data.erro); // Exibe mensagem de erro
+                    } else {
+                        window.location.href = data.redirect; // Redireciona para passagem.html
+                    }
+                })
+                .catch(error => console.error("Erro ao processar:", error));
+        });
+    } else {
+        console.error("Elemento #loginForm não encontrado!");
+    }
 });
