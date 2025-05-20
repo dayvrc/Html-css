@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let formData = new FormData(formulario);
 
-            fetch("PHP/index.php", {
+            fetch("PHP/cadastro.php", {
                 method: "POST",
                 body: formData
             })

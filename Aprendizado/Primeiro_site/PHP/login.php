@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $host = "localhost";
 $dbname = "projetohtml";
@@ -21,24 +22,23 @@ try {
         $usuario = $stmt->fetch();
 
         if (!$usuario || !password_verify($senha, $usuario["senha"])) {
-            echo json_encode(["erro" => "Email ou senha incorretos!"]);
+            // Você pode redirecionar para login com erro
+            header("Location: ../login.php?erro=1");
             exit;
         }
 
-        // Armazenando o nome do usuário na sessão
+        // Armazenando dados na sessão
         $_SESSION["usuario_id"] = $usuario["id"];
         $_SESSION["usuario_nome"] = $usuario["nome"];
 
-        echo json_encode([
-            "sucesso" => "Login realizado!",
-            "usuario_nome" => $usuario["nome"],
-            "redirect" => "index.php" // Ou redirecionamento para a página de carrinho, se desejado
-        ]);
+        // Redirecionando para a página principal
+        header("Location: ../index.php");
         exit;
     }
 
 } catch (PDOException $e) {
-    echo json_encode(["erro" => "Erro no banco de dados: " . $e->getMessage()]);
+    // Em ambiente real, evite mostrar erro diretamente
+    echo "Erro no banco de dados: " . $e->getMessage();
     exit;
 }
 ?>

@@ -1,24 +1,21 @@
 <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if (empty($_POST['nome'])){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (empty($_POST['nome'])) {
             $erroNome = "Por favor, preencha um nome";
-        }else{
+        } else {
             $nome = limpaPost($_POST['nome']);
-            if(!preg_match("/^[a-zA-Z' ]*$/",$nome)){
-                $erroNome = "Apenas letras"
+            if (!preg_match("/^[\p{L} ']+$/u", $nome)) {
+                $erroNome = "O nome deve conter apenas letras.";
             }
         }
-            
     }
 
-    
-    fuction limpaPost($valor){
+    function limpaPost($valor) {
         $valor = trim($valor);
         $valor = stripslashes($valor);
         $valor = htmlspecialchars($valor);
         return $valor;
     }
-                
 ?>
 
 <!DOCTYPE html> <!--Tag que mostra que o documento e tipo html-->
@@ -88,35 +85,10 @@
 
     </section>
 
-    <footer>
+    <!-- Incluindo o footer -->
+    <?php include('footer.php'); ?>
 
-        <div class="rodape">
-            <h1 class="aero_tour"> Aero Tour</h1>
-        </div>
-
-        <div class="container-rdp">
-            <div class="sociais">
-                <h2>Redes Sociais</h2>
-                <p>Instagram</p>
-                <p>Facebook</p>
-                <p>Youtube</p>
-            </div>
-            <div class="outros">
-                <h2>Cliente</h2>
-                <p>Faq</p>
-                <p>Atendimento</p>
-                <p>Financeiro</p>
-            </div>
-        </div>
-
-        <div class="endereco">
-            <p>Av. Eng. Abdias de Carvalho, 1678 - Madalena, Recife - PE, 50720-225
-            <p>
-        </div>
-
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="Jquery/jquery-3.7.1.js"></script>
     <script src="JS/global.js"></script>
 
 </body>
