@@ -1,3 +1,26 @@
+<?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if (empty($_POST['nome'])){
+            $erroNome = "Por favor, preencha um nome";
+        }else{
+            $nome = limpaPost($_POST['nome']);
+            if(!preg_match("/^[a-zA-Z' ]*$/",$nome)){
+                $erroNome = "Apenas letras"
+            }
+        }
+            
+    }
+
+    
+    fuction limpaPost($valor){
+        $valor = trim($valor);
+        $valor = stripslashes($valor);
+        $valor = htmlspecialchars($valor);
+        return $valor;
+    }
+                
+?>
+
 <!DOCTYPE html> <!--Tag que mostra que o documento e tipo html-->
 <html lang="pt-br"> <!--Tag que inicia o html e lang define idioma-->
 
