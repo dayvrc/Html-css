@@ -337,6 +337,12 @@ footer {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
+#popupCompra span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
 /* Estilo para mensagens de sucesso */
 .sucesso {
     background-color: #4CAF50;
@@ -349,4 +355,99 @@ footer {
     background-color: #ff4d4d;
     /* Vermelho */
     color: white;
+}
+
+/* Para telas até 768px (tablets e celulares) */
+@media screen and (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .logo {
+        flex: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .menu {
+        flex: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 18px;
+    }
+
+    #botao {
+        margin: 10px auto;
+    }
+
+    /* Container de passagens */
+    #container_passagens {
+        flex-direction: column;
+        height: auto;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Cada bloco da passagem ocupará quase toda a largura */
+    .bloco_passagem {
+        max-width: 100%;
+        min-width: auto;
+        margin-bottom: 20px;
+    }
+
+    /* Tela do produto */
+    .TelaP {
+        flex-direction: column;
+        padding: 20px 10px;
+        min-width: auto;
+    }
+
+    .TelaP_img,
+    .TelaP_txt {
+        margin: 0 auto;
+        flex: 100%;
+        text-align: center;
+    }
+
+    .TelaP_txt3 {
+        margin-top: 10px;
+    }
+
+    /* Footer */
+    .container-rdp {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .endereco {
+        padding: 20px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .txt-banner h2,
+    section h2,
+    .txt-passagens h2 {
+        font-size: 28px;
+    }
+
+    .menu a {
+        font-size: 16px;
+        padding: 10px 8px;
+    }
+
+    .btn_1 {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

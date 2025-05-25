@@ -24,11 +24,11 @@
     <header class="header"> <!--HTML semântico de cabeçalho-->
 
         <div class="txt-banner"> <!--Poderia usar o termo headline -->
-            <h2 style="letter-spacing: 15px;">você achou a melhor</h2>
+            <h2 style="letter-spacing: 15px;">você achou a melhor!</h2>
             <h2 style="font-size:80px">Aero Tour</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, magnam rem unde laborum temporibus cum
+<!--             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, magnam rem unde laborum temporibus cum
                 repellendus laudantium eius veritatis consequatur quod veniam, voluptates voluptate alias aliquam fugiat
-                itaque cumque quia.</p>
+                itaque cumque quia.</p> -->
         </div>
 
         <div class="img-banner">

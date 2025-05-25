@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-// Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.php");
     exit;
@@ -10,19 +8,11 @@ if (!isset($_SESSION['usuario_id'])) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head> <!--Tag cabeça o que está aqui não e visto pelo user só navegador-->
-    <meta charset="UTF-8"> <!--Tag de tipo de caracter com acento-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Tag de combatibilidade de explorer-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Tag de compatibilidade de expansão de tela-->
-    <meta name="description" content="Esse é meu primeiro site">
-    <meta name="keywords" content="programacao,html,css,javascript">
-    <meta name="author" content="Dayvson Costa">
-    <title>Aero Tour | Viaje bem</title> <!--Tag de titulo-->
-    <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho - Aero Tour</title>
+    <link rel="stylesheet" href="CSS/estilo.css">
 </head>
-
 <body>
 
 <?php include('navbarLogin.php'); ?>
@@ -42,17 +32,15 @@ if (!isset($_SESSION['usuario_id'])) {
         <tbody>
             <tr>
                 <td>Salvador</td>
-                <td>
-                    <input type="number" name="quantidade" value="1" min="1" max="10">
-                </td>
+                <td><input type="number" id="quantidade" value="1" min="1" max="10"></td>
                 <td>R$ 2.000</td>
-                <td>R$ 2.000</td>
+                <td id="total">R$ 2.000</td>
             </tr>
         </tbody>
     </table>
 
     <h3 style="margin-top: 20px;">Formas de Pagamento</h3>
-    <form>
+    <form id="formCompra">
         <label><input type="radio" name="pagamento" value="pix" checked> PIX</label><br>
         <label><input type="radio" name="pagamento" value="credito"> Cartão de Crédito</label><br>
         <label><input type="radio" name="pagamento" value="boleto"> Boleto Bancário</label><br><br>
@@ -61,11 +49,41 @@ if (!isset($_SESSION['usuario_id'])) {
     </form>
 </section>
 
-    <!-- Incluindo o footer -->
-    <?php include('footer.php'); ?>
+<div class="popup sucesso" id="popupMensagem">
+    <p id="mensagemPopup"></p>
+    <button onclick="fecharPopup()" class="btn_1">Fechar</button>
+</div>
 
-    <script src="Jquery/jquery-3.7.1.js"></script>
-    <script src="JS/global.js"></script>
+<?php include('footer.php'); ?>
 
+<script src="Jquery/jquery-3.7.1.js"></script>
+<script src="JS/global.js"></script>
+
+<script>
+    $('#formCompra').on('submit', function(e) {
+        e.preventDefault();
+        const quantidade = $('#quantidade').val();
+        const pagamento = $('input[name=pagamento]:checked').val();
+
+        $.ajax({
+            url: '/PHP/processar_compra.php',
+            method: 'POST',
+            dataType: 'json',
+            data: {
+                destino: 'Salvador',
+                quantidade: quantidade,
+                pagamento: pagamento
+            },
+            success: function(resposta) {
+                $('#mensagemPopup').text(resposta.sucesso || resposta.erro);
+                $('#popupMensagem').fadeIn();
+            }
+        });
+    });
+
+    function fecharPopup() {
+        $('#popupMensagem').fadeOut();
+    }
+</script>
 </body>
 </html>
