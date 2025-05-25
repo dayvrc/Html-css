@@ -368,7 +368,7 @@ footer {
     }
 
     .logo {
-        flex: 100%;
+        flex: 50%;
         margin-left: 0;
         text-align: center;
     }
@@ -449,5 +449,63 @@ footer {
     .btn_1 {
         padding: 8px 16px;
         font-size: 14px;
+    }
+}
+
+#container_passagens {
+    position: relative;
+    max-width: 1200px;
+    /* largura máxima para desktop */
+    margin: auto;
+    overflow: hidden;
+}
+
+/* wrapper flexível */
+.passagens-wrapper {
+    display: flex;
+    transition: transform 0.4s ease;
+    width: 100%;
+    will-change: transform;
+}
+
+/* Cada bloco passagem ocupa 100% no mobile e 25% no desktop */
+.bloco_passagem {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 10px;
+    width: 100%;
+    /* mobile: 1 por vez */
+}
+
+/* Botões de navegação */
+#btn-prev,
+#btn-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 123, 255, 0.8);
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+    z-index: 10;
+}
+
+#btn-prev {
+    left: 0;
+}
+
+#btn-next {
+    right: 0;
+}
+
+/* --- Media Query para desktop --- */
+@media (min-width: 768px) {
+    .bloco_passagem {
+        width: 25%;
+        /* 4 por vez */
     }
 }

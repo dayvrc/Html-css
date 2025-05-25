@@ -1,16 +1,14 @@
 <?php
 session_start();
-require_once 'conexao.php'; // Certifique-se de que o arquivo conexao.php está correto
+require_once 'conexao.php'; // ajuste o caminho conforme necessário
 
 header('Content-Type: application/json');
 
-// Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
     echo json_encode(['erro' => 'Usuário não logado.']);
     exit;
 }
 
-// Dados recebidos do formulário via POST
 $usuario_id = $_SESSION['usuario_id'];
 $destino = $_POST['destino'] ?? '';
 $quantidade = intval($_POST['quantidade'] ?? 1);
@@ -20,24 +18,24 @@ $valor_total = $quantidade * $valor_unitario;
 $data_compra = date('Y-m-d H:i:s');
 
 try {
-    // Comando SQL
     $sql = "INSERT INTO compras (usuario_id, destino, quantidade, pagamento, valor_total, data_compra)
-            VALUES ($1, $2, $3, $4, $5, $6) RETURNING id_compra";
+            VALUES (:usuario_id, :destino, :quantidade, :pagamento, :valor_total, :data_compra)
+            RETURNING id_compra";
 
-    // Executa a query preparada
-    $stmt = pg_prepare($conn, "inserir_compra", $sql);
-    $result = pg_execute($conn, "inserir_compra", [
-        $usuario_id,
-        $destino,
-        $quantidade,
-        $pagamento,
-        $valor_total,
-        $data_compra
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        ':usuario_id' => $usuario_id,
+        ':destino' => $destino,
+        ':quantidade' => $quantidade,
+        ':pagamento' => $pagamento,
+        ':valor_total' => $valor_total,
+        ':data_compra' => $data_compra
     ]);
 
-    // Verifica se a compra foi salva com sucesso
-    if ($row = pg_fetch_assoc($result)) {
-        echo json_encode(['sucesso' => "Compra finalizada com sucesso! Código: {$row['id_compra']}"]);
+    $result = $stmt->fetch();
+
+    if ($result) {
+        echo json_encode(['sucesso' => "Compra finalizada com sucesso! Código: {$result['id_compra']}"]);
     } else {
         echo json_encode(['erro' => 'Erro ao registrar compra.']);
     }

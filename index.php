@@ -45,71 +45,91 @@
 
         <div id="container_passagens">
 
-            <div class="bloco_passagem">
-                <a style="color: black; text-decoration: none;" href="passagem.php">
-                    <img src="CSS/img/Salvador.png" width="250">
-                    <p>PASSAGEM</p>
-                    <h3>Voos para Salvador</h3>
-                    <hr>
-                    <P style="font-size: 10px;">Ida e Volta</P>
-                    <HR>
-                    <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
-                    <p style="font-size: 10px;"> À VISTA</p>
-                    <P>10x R$200</P>
-                    <p></p>
-                    <br>
-                </a>
+            <button id="btn-prev" class="btn-carrossel">&#10094;</button>
+
+            <div class="passagens-wrapper">
+                <div class="bloco_passagem">
+                    <a style="color: black; text-decoration: none;" href="passagem.php">
+                        <img src="CSS/img/Salvador.png" width="250">
+                        <p>PASSAGEM</p>
+                        <h3>Voos para Salvador</h3>
+                        <hr>
+                        <P style="font-size: 10px;">Ida e Volta</P>
+                        <HR>
+                        <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
+                        <p style="font-size: 10px;"> À VISTA</p>
+                        <P>10x R$200</P>
+                        <p></p>
+                        <br>
+                    </a>
+                </div>
+            
+                <div class="bloco_passagem">
+                    <a style="color: black; text-decoration: none;" href="passagem.php">
+                        <img src="CSS/img/Salvador.png" width="250">
+                        <p>PASSAGEM</p>
+                        <h3>Voos para Salvador</h3>
+                        <hr>
+                        <P style="font-size: 10px;">Ida e Volta</P>
+                        <HR>
+                        <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
+                        <p style="font-size: 10px;"> À VISTA</p>
+                        <P>10x R$200</P>
+                        <p></p>
+                        <br>
+                    </a>
+                </div>
+
+                <div class="bloco_passagem">
+                    <a style="color: black;text-decoration: none;" href="passagem.php">
+                        <img src="CSS/img/Salvador.png" width="250">
+                        <p>PASSAGEM</p>
+                        <h3>Voos para Salvador</h3>
+                        <hr>
+                        <P style="font-size: 10px;">Ida e Volta</P>
+                        <HR>
+                        <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
+                        <p style="font-size: 10px;"> À VISTA</p>
+                        <P>10x R$200</P>
+                        <p></p>
+                        <br>
+                    </a>
+                </div>
+
+                <div class="bloco_passagem">
+                    <a style="color: black;text-decoration: none;" href="passagem.php">
+                        <img src="CSS/img/Salvador.png" width="250">
+                        <p>PASSAGEM</p>
+                        <h3>Voos para Salvador</h3>
+                        <hr>
+                        <P style="font-size: 10px;">Ida e Volta</P>
+                        <HR>
+                        <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
+                        <p style="font-size: 10px;"> À VISTA</p>
+                        <P>10x R$200</P>
+                        <p></p>
+                        <br>
+                    </a>
+                </div>
+
+                <div class="bloco_passagem">
+                    <a style="color: black;text-decoration: none;" href="passagem.php">
+                        <img src="CSS/img/Salvador.png" width="250">
+                        <p>PASSAGEM</p>
+                        <h3>Voos para Salvador</h3>
+                        <hr>
+                        <P style="font-size: 10px;">Ida e Volta</P>
+                        <HR>
+                        <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
+                        <p style="font-size: 10px;"> À VISTA</p>
+                        <P>10x R$200</P>
+                        <p></p>
+                        <br>
+                    </a>
+                </div>
             </div>
 
-            <div class="bloco_passagem">
-                <a style="color: black;text-decoration: none;" href="passagem.php">
-                    <img src="CSS/img/Salvador.png" width="250">
-                    <p>PASSAGEM</p>
-                    <h3>Voos para Salvador</h3>
-                    <hr>
-                    <P style="font-size: 10px;">Ida e Volta</P>
-                    <HR>
-                    <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
-                    <p style="font-size: 10px;"> À VISTA</p>
-                    <P>10x R$200</P>
-                    <p></p>
-                    <br>
-                </a>
-            </div>
-
-            <div class="bloco_passagem">
-                <a style="color: black;text-decoration: none;" href="passagem.php">
-                    <img src="CSS/img/Salvador.png" width="250">
-                    <p>PASSAGEM</p>
-                    <h3>Voos para Salvador</h3>
-                    <hr>
-                    <P style="font-size: 10px;">Ida e Volta</P>
-                    <HR>
-                    <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
-                    <p style="font-size: 10px;"> À VISTA</p>
-                    <P>10x R$200</P>
-                    <p></p>
-                    <br>
-                </a>
-            </div>
-
-            <div class="bloco_passagem">
-                <a style="color: black;text-decoration: none;" href="passagem.php">
-                    <img src="CSS/img/Salvador.png" width="250">
-                    <p>PASSAGEM</p>
-                    <h3>Voos para Salvador</h3>
-                    <hr>
-                    <P style="font-size: 10px;">Ida e Volta</P>
-                    <HR>
-                    <p style="font-size: 23px; font-weight: bold;">R$ 2.000</p>
-                    <p style="font-size: 10px;"> À VISTA</p>
-                    <P>10x R$200</P>
-                    <p></p>
-                    <br>
-                </a>
-            </div>
-
-
+            <button id="btn-next" class="btn-carrossel">&#10095;</button>
 
         </div>
 
@@ -118,8 +138,8 @@
     <!-- Incluindo o footer -->
     <?php include('footer.php'); ?>
 
-    <script src="Jquery/jquery-3.7.1.js"></script>
-    <script src="JS/global.js"></script>
+    <script src="Jquery\jquery-3.7.1.js"></script>
+    <script src="JavaScript\global.js"></script>
 
 </body>
 

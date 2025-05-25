@@ -56,8 +56,8 @@ if (!isset($_SESSION['usuario_id'])) {
 
 <?php include('footer.php'); ?>
 
-<script src="Jquery/jquery-3.7.1.js"></script>
-<script src="JS/global.js"></script>
+<script src="Jquery\jquery-3.7.1.js"></script>
+<script src="JavaScript\global.js"></script>
 
 <script>
     $('#formCompra').on('submit', function(e) {
@@ -66,9 +66,9 @@ if (!isset($_SESSION['usuario_id'])) {
         const pagamento = $('input[name=pagamento]:checked').val();
 
         $.ajax({
-            url: '/PHP/processar_compra.php',
+            url: 'PHP/processar_compra.php',
             method: 'POST',
-            dataType: 'json',
+            dataType: 'json',   
             data: {
                 destino: 'Salvador',
                 quantidade: quantidade,

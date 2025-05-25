@@ -60,8 +60,8 @@ session_start();
     <!-- Incluindo o footer -->
     <?php include('footer.php'); ?>
 
-    <script src="Jquery/jquery-3.7.1.js"></script>
-    <script src="JS/global.js"></script>
+    <script src="Jquery\jquery-3.7.1.js"></script>
+    <script src="JavaScript\global.js"></script>
 
 </body>
 
