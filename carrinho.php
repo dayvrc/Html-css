@@ -6,84 +6,110 @@ if (!isset($_SESSION['usuario_id'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Carrinho - Aero Tour</title>
-    <link rel="stylesheet" href="CSS/estilo.css">
+<!DOCTYPE html> <!--Tag que mostra que o documento e tipo html-->
+<html lang="pt-br"> <!--Tag que inicia o html e lang define idioma-->
+
+<!-- SHIFT + ALT + A - ATALHO DE COMENTARIO -->
+
+<head> <!--Tag cabeça o que está aqui não e visto pelo user só navegador-->
+    <meta charset="UTF-8"> <!--Tag de tipo de caracter com acento-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Tag de combatibilidade de explorer-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Tag de compatibilidade de expansão de tela-->
+    <meta name="description" content="Esse é meu primeiro site">
+    <meta name="keywords" content="programacao,html,css,javascript">
+    <meta name="author" content="Dayvson Costa">
+    <title>Aero Tour | Viaje bem</title> <!--Tag de titulo-->
+    <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
 </head>
+
+
 <body>
 
-<?php include('navbarLogin.php'); ?>
+    <?php include('navbarLogin.php'); ?>
 
-<section class="section_carrinho" style="padding: 2rem;">
-    <h2>Carrinho de Compras</h2>
+    <section class="section_carrinho">
 
-    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-        <thead>
-            <tr>
-                <th>Destino</th>
-                <th>Quantidade</th>
-                <th>Preço</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Salvador</td>
-                <td><input type="number" id="quantidade" value="1" min="1" max="10"></td>
-                <td>R$ 2.000</td>
-                <td id="total">R$ 2.000</td>
-            </tr>
-        </tbody>
-    </table>
+        <div id="dados_carrinho">
 
-    <h3 style="margin-top: 20px;">Formas de Pagamento</h3>
-    <form id="formCompra">
-        <label><input type="radio" name="pagamento" value="pix" checked> PIX</label><br>
-        <label><input type="radio" name="pagamento" value="credito"> Cartão de Crédito</label><br>
-        <label><input type="radio" name="pagamento" value="boleto"> Boleto Bancário</label><br><br>
+            <h2>Carrinho de Compras</h2>
 
-        <button type="submit" class="btn_1">Finalizar Compra</button>
-    </form>
-</section>
+            <div id="items_carrinho">
 
-<div class="popup sucesso" id="popupMensagem">
-    <p id="mensagemPopup"></p>
-    <button onclick="fecharPopup()" class="btn_1">Fechar</button>
-</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destino</th>
+                            <th>Quantidade</th>
+                            <th>Preço</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Salvador</td>
+                            <td><input type="number" id="quantidade" value="1" min="1" max="10"></td>
+                            <td>R$ 2.000</td>
+                            <td id="total">R$ 2.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
 
-<?php include('footer.php'); ?>
+            <div id="formas_pagamento">
 
-<script src="Jquery\jquery-3.7.1.js"></script>
-<script src="JavaScript\global.js"></script>
+                <h3 style="margin-top: 20px;">Formas de Pagamento</h3>
 
-<script>
-    $('#formCompra').on('submit', function(e) {
-        e.preventDefault();
-        const quantidade = $('#quantidade').val();
-        const pagamento = $('input[name=pagamento]:checked').val();
+                <form id="formCompra">
+                    <label><input type="radio" name="pagamento" value="pix" checked> PIX</label><br>
+                    <label><input type="radio" name="pagamento" value="credito"> Cartão de Crédito</label><br>
+                    <label><input type="radio" name="pagamento" value="boleto"> Boleto Bancário</label><br><br>
 
-        $.ajax({
-            url: 'PHP/processar_compra.php',
-            method: 'POST',
-            dataType: 'json',   
-            data: {
-                destino: 'Salvador',
-                quantidade: quantidade,
-                pagamento: pagamento
-            },
-            success: function(resposta) {
-                $('#mensagemPopup').text(resposta.sucesso || resposta.erro);
-                $('#popupMensagem').fadeIn();
-            }
+                    <button type="submit" class="btn_1" >Finalizar Compra</button>
+                </form>
+
+            </div>
+        </div>
+        
+    </section>
+
+    <div class="popup sucesso" id="popupMensagem">
+        <p id="mensagemPopup"></p>
+        <button onclick="fecharPopup()" class="btn_1">Fechar</button>
+    </div>
+
+    <?php include('footer.php'); ?>
+
+    <script src="Jquery\jquery-3.7.1.js"></script>
+    <script src="JavaScript\global.js"></script>
+
+    <script>
+        $('#formCompra').on('submit', function(e) {
+            e.preventDefault();
+            const quantidade = $('#quantidade').val();
+            const pagamento = $('input[name=pagamento]:checked').val();
+
+            $.ajax({
+                url: 'PHP/processar_compra.php',
+                method: 'POST',
+                dataType: 'json',   
+                data: {
+                    destino: 'Salvador',
+                    quantidade: quantidade,
+                    pagamento: pagamento
+                },
+                success: function(resposta) {
+                    $('#mensagemPopup').text(resposta.sucesso || resposta.erro);
+                    $('#popupMensagem').fadeIn();
+                }
+            });
         });
-    });
 
-    function fecharPopup() {
-        $('#popupMensagem').fadeOut();
-    }
-</script>
+        function fecharPopup() {
+            $('#popupMensagem').fadeOut();
+        }
+    </script>
 </body>
+
 </html>
