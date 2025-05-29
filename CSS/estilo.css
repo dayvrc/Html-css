@@ -118,10 +118,10 @@ body {
 }
 
 #items_carrinho {
-    border: 3px solid #180F4A;
+    /* border: 3px solid #180F4A; */
     padding: 5%;
-    margin: 10%;
-    gap: 50%;
+    margin-top: 10%;
+    margin-bottom: 5%;
 }
 
 #items_carrinho tbody tr {
@@ -463,11 +463,17 @@ footer {
         min-width: auto;
     }
 
-    .TelaP_img,
+    .TelaP_img {
+        margin-top: 30%;
+        flex: 100%;
+        object-fit: cover;
+    }
+
     .TelaP_txt {
         margin: 0 auto;
         flex: 100%;
         text-align: center;
+
     }
 
     .TelaP_txt3 {
@@ -485,10 +491,23 @@ footer {
     }
 
     #loginForm {
-        padding-top: 55%;
+        padding-top: 40%;
         justify-content: center;
         align-items: center;
     }
+
+    .bodyLogin .menu {
+        display: none;
+    }
+
+    .section_carrinho {
+        padding-top: 50%;
+    }
+
+    /* .popup_sucesso {
+        z-index: 1000;
+    } */
+
 }
 
 @media screen and (max-width: 480px) {

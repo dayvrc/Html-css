@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
 </head>
 
-<body>
+<body class="bodyLogin" >
 
     <!-- Incluindo a navbar -->
     <?php include('navbarLogin.php'); ?>
@@ -22,32 +22,32 @@
 
         <form id="loginForm" method="POST" action="PHP/login.php">
 
-
-            <div class="cadastro">
-                <h2 style="text-align: center; padding: 10%;">Login</h2>
-            </div>
-
-            <div class="iniciar_sessao">
-                <!--LEGENDA PARA EMAIL-->
-                <label for="campo_email">E-mail</label>
-                <!--ENTRADA DE DADOS TIPO EMAIL-->
-                <input id="campo_email" type="email" name="email" placeholder="Digite seu e-mail" required>
-                <label for="campo_senha">Senha</label>
-                <input id="campo_senha" type="password" name="senha" placeholder="Digite sua senha" required>
-            </div>
-
-            <div class="container_login_btn">
-                <!--BOTÃO-->
-                <div>
-                    <br><br>
-                    <a href="cadastro.php" class="btn_1">Cadastre-se</a>
-                    <button class="btn_1" type="submit">Entrar</button>
+            <div class="login_Form">
+                <div class="cadastro">
+                    <h2 style="text-align: center; padding: 10%;">Login</h2>
                 </div>
-                <div>
 
+                <div class="iniciar_sessao">
+                    <!--LEGENDA PARA EMAIL-->
+                    <label for="campo_email">E-mail</label>
+                    <!--ENTRADA DE DADOS TIPO EMAIL-->
+                    <input id="campo_email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    <label for="campo_senha">Senha</label>
+                    <input id="campo_senha" type="password" name="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="container_login_btn">
+                    <!--BOTÃO-->
+                    <div>
+                        <br><br>
+                        <a href="cadastro.php" class="btn_1">Cadastre-se</a>
+                        <button class="btn_1" type="submit">Entrar</button>
+                    </div>
+                    <div>
+
+                    </div>
                 </div>
             </div>
-
         </form>
 
 

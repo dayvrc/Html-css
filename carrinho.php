@@ -74,7 +74,7 @@ if (!isset($_SESSION['usuario_id'])) {
         
     </section>
 
-    <div class="popup sucesso" id="popupMensagem">
+    <div class="popup_sucesso" id="popupMensagem">
         <p id="mensagemPopup"></p>
         <button onclick="fecharPopup()" class="btn_1">Fechar</button>
     </div>
