@@ -30,7 +30,7 @@ body {
     align-items: center;
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .logo {
@@ -119,14 +119,14 @@ body {
 
 #items_carrinho {
     /* border: 3px solid #180F4A; */
-    padding: 5%;
-    margin-top: 10%;
-    margin-bottom: 5%;
+    padding: 3%;
+    margin-top: 2%;
+    /* margin-bottom: 5%; */
 }
 
-#items_carrinho tbody tr {
+/* #items_carrinho tbody tr {
     padding: 10%;
-}
+} */
 
 
 #formas_pagamento {
@@ -255,6 +255,13 @@ footer {
     color: black;
 }
 
+.TelaP img {
+    flex-direction: column;
+    padding: 20px 10px;
+    min-width: 500px;
+}
+
+
 .TelaP_txt2 {
     margin-top: 0%;
 }
@@ -371,6 +378,7 @@ footer {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
 }
 
 #popupCompra span {
@@ -393,15 +401,19 @@ footer {
     color: white;
 }
 
+
+
 /* Para telas até 768px (tablets e celulares) */
 @media screen and (max-width: 768px) {
 
     /* Navbar */
     .navbar {
+        display: block;
         flex-direction: column;
         height: auto;
         padding: 5px 0;
-        z-index: 1000;
+        z-index: 999;
+        width: auto;
     }
 
     .logo {
@@ -411,7 +423,7 @@ footer {
     }
 
     .txt-banner {
-        margin-top: 40%;
+        margin-top: 30%;
         margin-left: 10%;
         margin-right: 10%;
         flex: 40%;
@@ -419,6 +431,7 @@ footer {
     }
 
     .txt-banner h2 {
+        margin-top: 3%;
         font-weight: 900;
         color: #180F4A;
 
@@ -432,7 +445,7 @@ footer {
         flex: 100%;
         text-align: center;
         padding: 10px 0;
-        margin: 5%;
+        margin: 2%;
     }
 
     .menu a {
@@ -460,13 +473,17 @@ footer {
     .TelaP {
         flex-direction: column;
         padding: 20px 10px;
-        min-width: auto;
     }
 
     .TelaP_img {
         margin-top: 30%;
-        flex: 100%;
-        object-fit: cover;
+        /* flex: 100%; */
+        /* object-fit: cover; */
+        /* width: min-content; */
+    }
+
+    .TelaP_img img {
+        width: 100px;
     }
 
     .TelaP_txt {

@@ -27,7 +27,7 @@ session_start();
             <div class="TelaP">
 
                 <div class="TelaP_img">
-                    <img src="CSS/img/Salvador.png" width="500" alt="Imagem de Salvador">
+                    <img src="CSS/img/Salvador.png" alt="Imagem de Salvador">
                 </div>
 
                 <div class="TelaP_txt">

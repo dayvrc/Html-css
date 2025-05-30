@@ -30,9 +30,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
     <section class="section_carrinho">
 
-        <div id="dados_carrinho">
-
-            <h2>Carrinho de Compras</h2>
+        <h2>Carrinho de Compras</h2>
 
             <div id="items_carrinho">
 
@@ -70,14 +68,15 @@ if (!isset($_SESSION['usuario_id'])) {
                 </form>
 
             </div>
-        </div>
         
+        <div class="popup sucesso" id="popupMensagem">
+            <p id="mensagemPopup"></p>
+            <button onclick="fecharPopup()" class="btn_1">Fechar</button>
+        </div>
+
     </section>
 
-    <div class="popup_sucesso" id="popupMensagem">
-        <p id="mensagemPopup"></p>
-        <button onclick="fecharPopup()" class="btn_1">Fechar</button>
-    </div>
+
 
     <?php include('footer.php'); ?>
 
