@@ -115,3 +115,31 @@ $(document).ready(function () {
 
     updateCarousel(); // inicializa
 });
+
+$(document).ready(function () {
+    $('#formCompra').on('submit', function (e) {
+        e.preventDefault();
+        const quantidade = $('#quantidade').val();
+        const pagamento = $('input[name=pagamento]:checked').val();
+
+        $.ajax({
+            url: 'PHP/processar_compra.php',
+            method: 'POST',
+            dataType: 'json',
+            data: {
+                destino: 'Salvador',
+                quantidade: quantidade,
+                pagamento: pagamento
+            },
+            success: function (resposta) {
+                $('#mensagemPopup').text(resposta.sucesso || resposta.erro);
+                $('#popupMensagem').fadeIn();
+            }
+        });
+    });
+
+    window.fecharPopup = function () {
+        $('#popupMensagem').fadeOut();
+    };
+});
+

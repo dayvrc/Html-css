@@ -5,12 +5,12 @@ header('Content-Type: application/json');
 require_once 'conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome     = $_POST["nome"]     ?? "";
-    $cpf      = $_POST["cpf"]      ?? "";
-    $email    = $_POST["email"]    ?? "";
-    $telefone = $_POST["telefone"] ?? "";
+    $nome     = limparPost($_POST["nome"]     ?? "");
+    $cpf      = limparPost($_POST["cpf"]      ?? "");
+    $email    = limparPost($_POST["email"]    ?? "");
+    $telefone = limparPost($_POST["telefone"] ?? "");
     $genero   = $_POST["genero"]   ?? "";
-    $senha    = $_POST["senha"]    ?? "";
+    $senha    = limparPost($_POST["senha"]    ?? "");
 
     if (empty($nome) || empty($cpf) || empty($email) || empty($telefone) || empty($genero) || empty($senha)) {
         echo json_encode(["erro" => "Todos os campos são obrigatórios."]);

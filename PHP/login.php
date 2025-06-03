@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-$host = "localhost";
-$dbname = "projetohtml";
-$user = "dayvson";
-$password = "123456";
+require_once 'conexao.php';
 
 try {
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password, [
@@ -13,8 +10,8 @@ try {
     ]);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST["email"];
-        $senha = $_POST["senha"];
+        $email = limparPost($_POST["email"]);
+        $senha = limparPost($_POST["senha"]);
 
         $stmt = $pdo->prepare("SELECT id, nome, senha FROM usuarios WHERE email = :email");
         $stmt->bindParam(':email', $email);

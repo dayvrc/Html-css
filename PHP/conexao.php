@@ -13,4 +13,12 @@ try {
     echo json_encode(["erro" => "Erro no banco de dados: " . $e->getMessage()]);
     exit;
 }
+
+//FUNCAO DE LIMPAR DADOS
+function limparPost($dado){
+    $dado = trim($dado);
+    $dado = stripslashes($dado);
+    $dado = htmlspecialchars($dado);
+    return $dado;
+} 
 ?>

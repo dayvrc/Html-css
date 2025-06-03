@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'conexao.php'; // ajuste o caminho conforme necessário
+
+require_once 'conexao.php';
 
 header('Content-Type: application/json');
 
