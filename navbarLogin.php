@@ -17,7 +17,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
         <?php if (isset($_SESSION["usuario_nome"])): ?>
             <!-- Se o usuário estiver logado -->
-            <a href="perfil.php">Olá, <?= $_SESSION["usuario_nome"]; ?>!</a> <!-- Exibe o nome do usuário -->
+            <a href="perfil_usuario.php">Olá, <?= $_SESSION["usuario_nome"]; ?>!</a> <!-- Exibe o nome do usuário -->
             <a href="PHP/logout.php" id="botao" >Sair</a> <!-- Link para deslogar -->
         <?php else: ?>
             <!-- Se o usuário não estiver logado -->
