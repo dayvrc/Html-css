@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="CSS/estilo.css"> <!--TAG PARA LINK DE CSS-->
 </head>
 
-<body>
+<body class="bodyCadastro">
 
     <!-- Incluindo a navbar -->
     <?php include('navbarLogin.php'); ?>
